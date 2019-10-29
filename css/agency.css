@@ -393,6 +393,12 @@ header.masthead {
       transform: rotate(90deg);
       background-color: #212529; }
 
+.sit-card {
+  width: 18rem;
+  border: 7px solid #e9ecef; }
+  .sit-card > img.card-img-top {
+    background-color: #fed136; }
+
 .timeline {
   position: relative;
   padding: 0;

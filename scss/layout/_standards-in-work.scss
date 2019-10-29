@@ -1,0 +1,9 @@
+// Styling for the Standards in work section
+.sit-card{
+  width: 18rem;
+  border: 7px solid $gray-200;
+  margin-bottom: 15px;
+  > img.card-img-top {
+    background-color: $primary;
+  }
+}
