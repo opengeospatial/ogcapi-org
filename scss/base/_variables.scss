@@ -14,4 +14,31 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
 
-$primary: #fed136 !default;
+//$primary: #fed136 !default;
+//$primary: #00487b !default;
+//$secondary: #77beff !default;
+
+$primary: #568BDA;
+$secondary: #75B2F1;
+
+
+/* Color Theme Swatches in Hex */
+$chickens1-1-hex: #568BDA;
+$chickens1-2-hex: #75B2F1;
+$chickens1-3-hex: #6E8942;
+$chickens1-4-hex: #5B7137;
+$chickens1-5-hex: #BD7B4D;
+
+/* Color Theme Swatches in RGBA */
+$chickens1-1-rgba: rgba(86,139,218, 1);
+$chickens1-2-rgba: rgba(117,178,241, 1);
+$chickens1-3-rgba: rgba(110,137,66, 1);
+$chickens1-4-rgba: rgba(91,113,55, 1);
+$chickens1-5-rgba: rgba(189,123,77, 1);
+
+/* Color Theme Swatches in HSLA */
+$chickens1-1-hsla: hsla(215, 64, 59, 1);
+$chickens1-2-hsla: hsla(210, 81, 70, 1);
+$chickens1-3-hsla: hsla(82, 34, 39, 1);
+$chickens1-4-hsla: hsla(82, 34, 32, 1);
+$chickens1-5-hsla: hsla(24, 45, 52, 1);
