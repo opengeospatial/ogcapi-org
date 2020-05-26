@@ -69,3 +69,17 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+
+// CUSTOM CSS - from here https://bootsnipp.com/snippets/Gzorl applied to the What's New section
+.top-slider .carousel-indicators{bottom: 0}
+.top-slider .carousel-indicators li{border:1px solid #000;}
+.top-slider .carousel-indicators .active{background:#000;}
+
+.title-large {font-size: 20px; margin: 10px 0 5px; line-height: 27px; color: #141517;}
+.title-small { color: #141517; font-size: 16px; font-weight: 400; line-height: 23px; margin: 6px 0 0;}
+.title-x-small {font-size: 18px; margin: 0px;}
+.title-large a, .title-small a, .title-x-small a{color: inherit}
+
+.card-block{padding:0 10px 10px;}
+.card-text{margin: 0}
+.text-time{color: #ff0000; font-weight: 600;}
