@@ -49,3 +49,10 @@ header.masthead {
     }
   }
 }
+.ov-lay {
+  background: rgba( $gray-600, .7 );
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
