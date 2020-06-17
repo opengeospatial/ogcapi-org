@@ -77,7 +77,7 @@
     <div class="ov-lay">
     <div class="container">
       <div class="intro-text">
-        <div class="intro-lead-in">OGC API Features</div>
+        <div class="intro-lead-in">OGC API Tiles</div>
         <!-- <div class="intro-heading">#OGCAPI</div> -->
         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#intro">Tell Me More</a>
         <br><br>
@@ -92,7 +92,7 @@
     <div class="containter">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">OGC API - Features</h2>
+          <h2 class="section-heading text-uppercase">OGC API - Tiles</h2>
           <!-- <h3 class="section-subheading text-muted">A little about us</h3> -->
         </div>
       </div>
@@ -100,83 +100,36 @@
         <div class="col-lg-8 mx-auto text-justify">
           <!-- Begin CONTENT -->
           <div id="content">
-            <div class="sect1">
-              <!-- <h2 id="_ogc_api_features">OGC API - Features</h2> -->
-              <div class="sectionbody">
-                <div class="paragraph">
-                  <p>OGC API - Features is a multi-part standard that offers the capability to create, modify, and query spatial data on the Web and specifies requirements and recommendations for APIs that want to follow a standard way of sharing feature data. The specification is a multi-part document. The Core part of the specification describes the mandatory capabilities that every implementing service has to support and is restricted to read-access to spatial data. Additional capabilities that address specific needs will be specified in additional parts. Envisaged future capabilities include, for example, support for creating and modifying data, more complex data models, richer queries, and additional coordinate reference systems.</p>
-                </div>
-                <div class="sect2">
-                  <h3 id="_developer_friendly_openapi_definitions">Developer-friendly OpenAPI definitions</h3>
-                  <div class="ulist">
-                    <ul>
-                      <li>
-                        <p>OGC API - Features - Part 1: Core on SwaggerHub</p>
-                        <div class="ulist">
-                          <ul>
-                            <li>
-                              <p>This  <a href="https://app.swaggerhub.com/apis/cportele/ogcapi-features-1-example1/1.0.0">definition</a> uses path parameters to describe all feature collections and all features.</p>
-                            </li>
-                            <li>
-                              <p>This <a href="https://app.swaggerhub.com/apis/cportele/ogcapi-features-1-example2/1.0.0">definition</a> uses a path parameter for the collections and explicitly provides information about the feature collection 'buildings' (paths /collections/buildings etc.), the schema of the building features and a filter parameter for building features (parameter function).</p>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                      <li>
-                        <p><a href="https://app.swaggerhub.com/apis/cportele/opf-features-api/1.0.0">Features API extended with Styles API</a> <strong>draft</strong> on SwaggerHub</p>
-                      </li>
-                    </ul>
+              <div class="sect1">
+                  <!-- <h2 id="_ogc_api_tiles">OGC API - Tiles</h2> -->
+                  <div class="sectionbody">
+                      <div class="paragraph">
+                          <p>The OGC API - Tiles draft specification describes an API building block that can enable other OGC API implementations to serve maps or tiled feature data divided into individual tiles. The draft specification includes concepts such as tile matrix sets and tile schemes, although such concepts have been revised to allow for tiling other types of resources, such as vector tiles and not only maps. The OGC API - Tiles draft specification references the OGC Two Dimensional Tile Matrix Set (TMS) standard. The TMS standard defines the rules and requirements for a tile matrix set as a way to index space based on a set of regular grids defining a domain (tile matrix) for a limited list of scales in a Coordinate Reference System (CRS).</p>
+                      </div>
+                      <div class="sect2">
+                          <h3 id="_standards_documents">Standards Documents</h3>
+                          <div class="paragraph">
+                              <p>The standards can be found at:</p>
+                          </div>
+                          <div class="ulist">
+                              <ul>
+                                  <li>
+                                      <p><a href="https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html">OGC API - Tiles</a> <strong>draft</strong> standard</p>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="sect2">
+                          <h3 id="_development">Development</h3>
+                          <div class="paragraph">
+                              <p>Development of the standards takes place on <a href="https://github.com/opengeospatial/OGC-API-Tiles">GitHub</a>.</p>
+                          </div>
+                      </div>
                   </div>
-                </div>
-                <div class="sect2">
-                  <h3 id="_standards_documents">Standards Documents</h3>
-                  <div class="paragraph">
-                    <p>The standards can be found at:</p>
-                  </div>
-                  <div class="ulist">
-                    <ul>
-                      <li>
-                        <p><a href="http://docs.opengeospatial.org/is/17-069r3/17-069r3.html">OGC API - Features - Part 1: Core</a> standard</p>
-                      </li>
-                      <li>
-                        <p><a href="http://docs.opengeospatial.org/DRAFTS/18-058.html">OGC API - Features - Part 2: Coordinate Reference Systems by Reference</a> <strong>draft</strong> standard</p>
-                      </li>
-                      <li>
-                        <p><a href="http://docs.opengeospatial.org/DRAFTS/19-079.html">OGC API - Features - Part 3: Common Query Language</a> <strong>draft</strong> standard</p>
-                      </li>
-                      <li>
-                        <p><a href="http://docs.opengeospatial.org/DRAFTS/20-002.html">OGC API - Features - Part 4: Simple Transactions</a> <strong>draft</strong> standard</p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="sect2">
-                  <h3 id="_development">Development</h3>
-                  <div class="paragraph">
-                    <p>Development of the standards takes place on <a href="https://github.com/opengeospatial/ogcapi-features">GitHub</a>.</p>
-                  </div>
-                </div>
-                <div class="sect2">
-                  <h3 id="_early_implementers">Early Implementers</h3>
-                  <div class="paragraph">
-                    <p>View a list of Early Implementers <a href="https://www.ogc.org/resource/products/byspec/?specid=1022">here</a>.</p>
-                  </div>
-                </div>
-                <div class="sect2">
-                  <h3 id="_ogc_compliance_certification">OGC Compliance Certification</h3>
-                  <div class="paragraph">
-                    <p>Compliance tests for OGC API - Features - Part 1: Core are available on the <a href="https://cite.opengeospatial.org/teamengine/">OGC Validator</a>.</p>
-                  </div>
-                  <div class="paragraph">
-                    <p>You can <strong>Get Certified as OGC Compliant</strong> through the process described on the <a href="https://www.ogc.org/compliance/getCertified">OGC Compliance website</a>.</p>
-                  </div>
-                </div>
               </div>
-            </div>
           </div>
-          <!-- End CONTENT -->
 
+          <!-- End CONTENT -->
           <!-- <p class="text-center">To find out more about the OGC please <a href="https://www.ogc.org" target="_blank">visit our public site</a>. <br><img src="img/OGC_Logo_2D_Blue_150px.jpg" alt="OGC Logo"></p> -->
           <p class="text-center">To find out more about the OGC please visit our public site. <a class="btn px-1 bg-light" href="https://www.ogc.org" target="_blank" role="button"><img src="../img/OGC_Logo_Border_Blue_2D.svg" alt="OGC Logo" height="76"></a></p>
         </div>
