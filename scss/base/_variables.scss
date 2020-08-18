@@ -18,9 +18,11 @@ $black: #000 !default;
 //$primary: #00487b !default;
 //$secondary: #77beff !default;
 
-$primary: #568BDA;
-$secondary: #75B2F1;
-
+$primary_orig: #568BDA;
+$secondary_orig: #75B2F1;
+$primary: #003366;
+$secondary: #2f5597;
+$ternary: #dae3f3;
 
 /* Color Theme Swatches in Hex */
 $chickens1-1-hex: #568BDA;
@@ -42,3 +44,15 @@ $chickens1-2-hsla: hsla(210, 81, 70, 1);
 $chickens1-3-hsla: hsla(82, 34, 39, 1);
 $chickens1-4-hsla: hsla(82, 34, 32, 1);
 $chickens1-5-hsla: hsla(24, 45, 52, 1);
+
+//#### OGC BRAND COLORS #####\\
+//Soft Gray
+// RGB: 231 230 230 HEX: #e7e6e6
+//Dark Gray
+// RGB: 54 64 73 HEX: #364049
+//Soft Blue
+// RGB: 218 227 243 HEX: #dae3f3
+//Logo Blue
+// RGB: 0 51 102 HEX: #003366
+//Accented Blue
+// RGB: 47 85 151 HEX: #2f5597

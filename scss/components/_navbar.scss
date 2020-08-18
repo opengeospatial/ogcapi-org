@@ -23,6 +23,11 @@
       color: darken($primary, 10%);
       //color: lighten($primary,15%);
     }
+    .page-top-logo {
+      background-color: white;
+      border-radius: 3px;
+      height: 70px;
+    }
   }
   .navbar-nav {
     .nav-item {
@@ -35,9 +40,8 @@
         @include heading-font;
         &.active,
         &:hover {
-          color: $primary;
           //color: $secondary;
-          //color: lighten($primary, 25%);
+          color: lighten($primary, 25%);
         }
       }
     }
