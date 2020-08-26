@@ -1,17 +1,23 @@
 $(function() {
 
+  $('[data-toggle="popover"]').popover();
+
+  $('[data-toggle="tooltip"]').tooltip();
+
   $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
     preventSubmit: true,
-    submitError: function($form, event, errors) {
-      // additional error messages or events
-    },
+    // submitError: function($form, event, errors) {
+    //   // additional error messages or events
+    // },
     submitSuccess: function($form, event) {
       event.preventDefault(); // prevent default submit behaviour
       // get values from FORM
-      var name = $("input#name").val();
-      var email = $("input#email").val();
-      var phone = $("input#phone").val();
-      var message = $("textarea#message").val();
+      var name         = $("input#name").val();
+      var email        = $("input#email").val();
+      var organization = $("input#organization").val();
+      var message      = $("textarea#message").val();
+      var newsletter   = $("input#newsletter").prop("checked") === true ? $("input#newsletter").val() : 0;
+
       var firstName = name; // For Success/Failure Message
       // Check for white space in name for Success/Fail message
       if (firstName.indexOf(' ') >= 0) {
@@ -24,9 +30,10 @@ $(function() {
         type: "POST",
         data: {
           name: name,
-          phone: phone,
+          organization: organization,
           email: email,
-          message: message
+          message: message,
+          newsletter: newsletter
         },
         cache: false,
         success: function() {
@@ -72,4 +79,9 @@ $(function() {
 /*When clicking on Full hide fail/success boxes */
 $('#name').focus(function() {
   $('#success').html('');
+});
+
+$('#privacynote').hover(function() {
+  // var np = $("#newsletter").prop("checked");
+    $('#privacynote').popover('toggle');
 });
