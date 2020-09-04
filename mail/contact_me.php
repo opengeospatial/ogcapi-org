@@ -1,4 +1,14 @@
 <?php
+// IN the htaccess you can set up the following
+// SetEnv DEV_ENV development
+// and it will always make this test so that you don't execute the mailchimp code
+// since they do not offer a test server as of 2020-08-26
+define('ENVIRONMENT', isset($_SERVER['DEV_ENV']) ? $_SERVER['DEV_ENV'] : 'production');
+if(ENVIRONMENT == 'development'){
+  $test = true;
+}
+
+
 // Check for empty fields
 if(empty($_POST['name'])      ||
  empty($_POST['email'])     ||
@@ -27,13 +37,12 @@ if($newsletter == 1){
     'orgname'   => $organization,
     'signup'    => $signup
   );
-  $test = false;
   $mailchimpcode = syncMailchimp($data, $test);
 }
 
 
 // Create the email and send the message
-$to            = 'ssimmons@ogc.org'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
+$to            = 'ogcapi@ogc.org'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
 $email_subject = "OGCAPI Contact Form:  $name";
 $email_body    = "You have received a new message from the OGCAPI website contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nNewsletter: $newsletter\n\nMailChimpCode:$mailchimpcode\n\nOrganization: $organization\n\nMessage:\n$message";
 $headers       = "From: noreply@ogc.org\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
