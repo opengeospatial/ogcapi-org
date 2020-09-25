@@ -1,0 +1,1 @@
+!function(t){"use strict";t("div#document_list .list-group-item:gt(3)").hide();t("#document_list .list-group-item").length>3?t("span").show():t("span").hide(),t(".show_button").click((function(){t("div#document_list .list-group-item:gt(3)").toggle("slide"),"Show more +"===t(this).text()?t(this).text("Show less -"):t(this).text("Show more +")}))}(jQuery);
