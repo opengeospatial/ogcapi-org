@@ -12,7 +12,6 @@
         }
 
         gtag('js', new Date());
-
         gtag('config', 'UA-168635-13');
     </script>
 
@@ -21,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OGC API - Tiles</title>
+    <title>OGC API - Records - Overview</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -83,11 +82,11 @@
 </nav>
 
 <!-- Header -->
-<header class="masthead tiles">
+<header class="masthead records">
     <div class="ov-lay">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">OGC API - Tiles</div>
+                <div class="intro-lead-in">OGC API - Records - Overview</div>
                 <!-- <div class="intro-heading">#OGCAPI</div> -->
                 <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#intro">Tell Me More</a> -->
                 <br>
@@ -103,7 +102,7 @@
     <div class="containter">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">OGC API - Tiles</h2>
+                <!--          <h2 class="section-heading text-uppercase">OGC API - Common - Overview</h2>-->
                 <!-- <h3 class="section-subheading text-muted">A little about us</h3> -->
             </div>
         </div>
@@ -111,67 +110,66 @@
             <div class="col-lg-8 mx-auto text-justify">
                 <!-- Begin CONTENT -->
                 <div id="content">
-                    <div class="sect1">
-                        <!-- <h2 id="_ogc_api_tiles">OGC API - Tiles</h2> -->
-                        <div class="sectionbody">
-                            <div class="paragraph">
-                                <p>The OGC API - Tiles draft specification describes an API building block that can
-                                    enable other OGC API implementations to serve maps or tiled feature data divided
-                                    into individual tiles. The draft specification includes concepts such as tile matrix
-                                    sets and tile schemes, although such concepts have been revised to allow for tiling
-                                    other types of resources, such as vector tiles and not only maps. The OGC API -
-                                    Tiles draft specification references the OGC Two Dimensional Tile Matrix Set (TMS)
-                                    standard. The TMS standard defines the rules and requirements for a tile matrix set
-                                    as a way to index space based on a set of regular grids defining a domain (tile
-                                    matrix) for a limited list of scales in a Coordinate Reference System (CRS).</p>
-                            </div>
-                            <div class="sect2">
-                                <h3 id="_overview">Overview</h3>
-                                <div class="ulist">
-                                    <ul>
-                                        <li>Visit the <a href="overview.html">overview page</a> to learn more about this
-                                            standard.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect2">
-                                <h3 id="_developer_friendly_openapi_definitions">Developer-friendly OpenAPI
-                                    definitions</h3>
-                                <div class="ulist">
-                                    <ul>
-                                        <li>OGC API - Tiles <a
-                                                href="https://opengeospatial.github.io/architecture-dwg/api-tiles/index.html"
-                                                target="_blank">examples using ReDoc</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect2">
-                                <h3 id="_standards_documents">Standards Documents</h3>
-                                <div class="paragraph">
-                                    <p>The standards can be found at:</p>
-                                </div>
-                                <div class="ulist">
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                <a href="https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html">OGC
-                                                    API - Tiles</a> <strong>draft</strong></p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect2">
-                                <h3 id="_development">Development</h3>
-                                <div class="paragraph">
-                                    <p>Development of the standards takes place on <a
-                                            href="https://github.com/opengeospatial/OGC-API-Tiles">GitHub</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
+                    <h1 id="ogc_api_records">OGC API - Records</h1>
+
+                    <p><a href="https://ogcapi.ogc.org/">OGC API standards</a> define modular API building blocks to
+                        spatially enable Web APIs
+                        in a consistent way. <a href="http://openapis.org">OpenAPI</a> is used to define the reusable
+                        API building blocks with responses in JSON and HTML.</p>
+
+                    <p>The OGC API family of standards is organized by resource type. The draft OGC API - Records
+                        standard defines an API with two goals:</p>
+
+                    <ul>
+                        <li><p>Provide modern API patterns and encodings to facilitate further lowering the barrier to
+                            finding the existence of spatial resources on the Web.</p></li>
+                        <li><p>Provide metadata discovery and retrieval functionality that is comparable to that of the
+                            OGC Catalogue Service (CSW) standard.</p></li>
+                    </ul>
+
+                    <h2 id="overview_of_ogc_api_records_part_1_core">Overview of OGC API - Records - Part 1: Core</h2>
+
+                    <p><code>
+                        GET {root}/
+                    </code><br>Retrieves the landing page. The purpose of the landing page is to provide clients with a starting
+                        point for using the API. Any resource exposed through an API can be accessed by following paths
+                        or links starting from the landing page.<br>The landing page includes three metadata elements; title, description, and attribution. Only the
+                        title is required. These three elements describe the API as a whole. Clients can expect to
+                        encounter metadata which is more resource-specific as they follow links and paths from the
+                        landing page.</p>
+
+                    <p><code>
+                        GET {root}/api
+                    </code><br>Retrieves the API definition which describes the capabilities provided by that API. This resource
+                        can be used by developers to improve their understanding of the API, by software clients to
+                        connect to the server, and by development tools to support the implementation of servers and
+                        clients.</p>
+
+                    <p><code>
+                        GET {root}/conformance
+                    </code><br>Provides a list declaring the modules that are implemented by the API. These modules are referred
+                        to as Conformance Classes. The list of Conformance Classes is key to understanding and using an
+                        OGC Web API.</p>
+
+                    <p><code>
+                        GET {root}/collections
+                    </code><br>Metadata describing the spatial collections available from this API.</p>
+
+                    <p><code>
+                        GET /collections/{collectionId}
+                    </code><br>Metadata describing the collection which has the unique identifier {collectionid}</p>
+
+                    <p><code>
+                        GET {root}/collections/{collectionid}/items
+                    </code><br>Search results based on querying the service for records satisfying 0..n query parameters.</p>
+
+                    <p><code>
+                        GET {root}/collections/{collectionid}/items/{recordid}
+                    </code><br>Record of metadata which has the unique identifier {recordid}.</p>
+
+
+                </div>
                 <!-- End CONTENT -->
                 <!-- <p class="text-center">To find out more about the OGC please <a href="https://www.ogc.org" target="_blank">visit our public site</a>. <br><img src="img/OGC_Logo_2D_Blue_150px.jpg" alt="OGC Logo"></p> -->
                 <p class="text-center">To find out more about the OGC please visit our public site. <a

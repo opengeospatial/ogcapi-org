@@ -12,7 +12,6 @@
         }
 
         gtag('js', new Date());
-
         gtag('config', 'UA-168635-13');
     </script>
 
@@ -21,7 +20,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OGC API - Tiles</title>
+    <title>OGC API - Common - Overview</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -83,11 +82,11 @@
 </nav>
 
 <!-- Header -->
-<header class="masthead tiles">
+<header class="masthead edr">
     <div class="ov-lay">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">OGC API - Tiles</div>
+                <div class="intro-lead-in">OGC API - EDR - Overview</div>
                 <!-- <div class="intro-heading">#OGCAPI</div> -->
                 <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#intro">Tell Me More</a> -->
                 <br>
@@ -103,7 +102,7 @@
     <div class="containter">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading text-uppercase">OGC API - Tiles</h2>
+                <!--          <h2 class="section-heading text-uppercase">OGC API - Common - Overview</h2>-->
                 <!-- <h3 class="section-subheading text-muted">A little about us</h3> -->
             </div>
         </div>
@@ -111,67 +110,83 @@
             <div class="col-lg-8 mx-auto text-justify">
                 <!-- Begin CONTENT -->
                 <div id="content">
-                    <div class="sect1">
-                        <!-- <h2 id="_ogc_api_tiles">OGC API - Tiles</h2> -->
-                        <div class="sectionbody">
-                            <div class="paragraph">
-                                <p>The OGC API - Tiles draft specification describes an API building block that can
-                                    enable other OGC API implementations to serve maps or tiled feature data divided
-                                    into individual tiles. The draft specification includes concepts such as tile matrix
-                                    sets and tile schemes, although such concepts have been revised to allow for tiling
-                                    other types of resources, such as vector tiles and not only maps. The OGC API -
-                                    Tiles draft specification references the OGC Two Dimensional Tile Matrix Set (TMS)
-                                    standard. The TMS standard defines the rules and requirements for a tile matrix set
-                                    as a way to index space based on a set of regular grids defining a domain (tile
-                                    matrix) for a limited list of scales in a Coordinate Reference System (CRS).</p>
-                            </div>
-                            <div class="sect2">
-                                <h3 id="_overview">Overview</h3>
-                                <div class="ulist">
-                                    <ul>
-                                        <li>Visit the <a href="overview.html">overview page</a> to learn more about this
-                                            standard.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect2">
-                                <h3 id="_developer_friendly_openapi_definitions">Developer-friendly OpenAPI
-                                    definitions</h3>
-                                <div class="ulist">
-                                    <ul>
-                                        <li>OGC API - Tiles <a
-                                                href="https://opengeospatial.github.io/architecture-dwg/api-tiles/index.html"
-                                                target="_blank">examples using ReDoc</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect2">
-                                <h3 id="_standards_documents">Standards Documents</h3>
-                                <div class="paragraph">
-                                    <p>The standards can be found at:</p>
-                                </div>
-                                <div class="ulist">
-                                    <ul>
-                                        <li>
-                                            <p>
-                                                <a href="https://htmlpreview.github.io/?https://github.com/opengeospatial/OGC-API-Tiles/blob/master/core/standard/OAPI_Tiles.html">OGC
-                                                    API - Tiles</a> <strong>draft</strong></p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sect2">
-                                <h3 id="_development">Development</h3>
-                                <div class="paragraph">
-                                    <p>Development of the standards takes place on <a
-                                            href="https://github.com/opengeospatial/OGC-API-Tiles">GitHub</a>.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
+                    <h1 id="ogc_api_environmental_data_retrieval">OGC API - Environmental Data Retrieval - Overview</h1>
+
+                    <p><a href="https://ogcapi.ogc.org/">OGC API standards</a> define modular API building blocks to
+                        spatially enable Web APIs
+                        in a consistent way. <a href="http://openapis.org">OpenAPI</a> is used to define the reusable
+                        API building blocks with responses in JSON and HTML.</p>
+
+                    <p>The OGC API family of standards is organized by resource type. The draft OGC API - Environmental
+                        Data Retrieval standard defines an Environmental Data Retrieval (EDR) API with two goals:</p>
+
+                    <ol>
+                        <li>To allow clients to retrieve a subset of data created by the API in response to a
+                            standardized, coordinate orientated, query pattern;
+                        </li>
+                        <li>To provide &#8216;building blocks&#8217; allowing the construction of more complex
+                            applications.
+                        </li>
+                    </ol>
+
+                    <p>The EDR API can be considered a &#8216;Sampling API&#8217;. The query creates a discrete sampling
+                        geometry against the Environmental Data resource of a relatively persistent data store. The
+                        query and its response are transient resources, which could be made persistent for re-use if
+                        required.</p>
+
+                    <p>The functionality provided by EDR query patterns could be realized through specific
+                        implementation of the SOS (and to some extent WCS) from the OGC Web Services family of
+                        (XML-based) standards. EDR introduces a streamlined JSON-based OGC API implementation of
+                        building blocks that could be used for many of the same use cases addressed by SOS and WCS in
+                        the past.</p>
+
+                    <h2 id="overview_of_ogc_api_environmental_data_retrieval">Overview of OGC API - Environmental Data
+                        Retrieval</h2>
+
+                    <p>The API provides access to Environmental Data Retrieval.</p>
+
+                    <p>The following is an overview of the paths to resources offered by implementations of this
+                        standard, where <code>{root}</code> is Base URI for the API server, <code>{collectionId}</code>
+                        is an identifier for a specific collection of data, <code>{instanceId}</code> is an identifier
+                        for a specific version or instance of a collection of data, and <code>{queryType}</code> is an
+                        identifier for a specific query pattern to retrieve data from a specific collection of data.</p>
+
+                    <p><code>
+                        GET {root}/collections
+                    </code><br>Metadata describing the collections of data available from this API.</p>
+
+                    <p><code>
+                        GET {root}/collections/{collectionId}
+                    </code><br>Metadata describing the collection of data which has the unique identifier
+                        <code>{collectionId}</code>.</p>
+
+                    <p>The metadata describes basic information about the geospatial data collection, like its id and
+                        description, as well as the spatial and temporal extents of all the data contained.</p>
+
+                    <p><code>
+                        GET /collections/{collectionId}/items/{featureId}
+                    </code><br>Returns a single &#8216;feature&#8217; - something in the real-world (a building,
+                        a stream, a county, etc.) that typically is described by a geometry plus other properties. The
+                        EDR API&#8217;s Items query is an OGC API - Features endpoint that may be used to catalog
+                        pre-existing EDR sampling features.</p>
+
+                    <p><code>
+                        GET {root}/collections/{collectionId}/{queryType}
+                    </code><br>Retrieves data according to the query pattern. Query resources are spatial queries which support
+                        the operation of the API or the access and use of the Environmental Data resources.</p>
+
+                    <p><code>
+                        GET {root}/collections/{collectionId}/instances
+                    </code><br>Retrieve metadata about instances of a collection.</p>
+
+                    <p><code>
+                        GET {root}/collections/{collectionId}/instances/{instanceId}
+                    </code><br>Retrieve metadata from a specific instance of a collection which has the unique identifier <code>{instanceId}</code>.
+                    </p>
+
+
+                </div>
                 <!-- End CONTENT -->
                 <!-- <p class="text-center">To find out more about the OGC please <a href="https://www.ogc.org" target="_blank">visit our public site</a>. <br><img src="img/OGC_Logo_2D_Blue_150px.jpg" alt="OGC Logo"></p> -->
                 <p class="text-center">To find out more about the OGC please visit our public site. <a

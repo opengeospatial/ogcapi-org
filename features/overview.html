@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168635-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-168635-13');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>OGC API - Common - Overview</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/agency.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="../">
+            <!-- OGC API -->
+            <!-- <img src="img/OGC_Logo_2D_Blue_150px.png" alt=""> -->
+            <img class="page-top-logo" src="../img/OGC_Logo_Border_Blue_2D.svg" alt="OGC Logo">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#intro">Context</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#standards">APIs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#events">Sprints</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#blogs">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#documents">Documents</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#contact">Get In Touch</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead features">
+    <div class="ov-lay">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">OGC API - Features - Overview</div>
+                <!-- <div class="intro-heading">#OGCAPI</div> -->
+                <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#intro">Tell Me More</a> -->
+                <br>
+                <p class="intro-lead-in"><a style="color:white;" href="http://twitter.com/hashtag/OGCAPI"
+                                            target="_blank">#OGCAPI</a></p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Intro -->
+<section class="page-section" id="intro">
+    <div class="containter">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <!--          <h2 class="section-heading text-uppercase">OGC API - Common - Overview</h2>-->
+                <!-- <h3 class="section-subheading text-muted">A little about us</h3> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-justify">
+                <!-- Begin CONTENT -->
+                <div id="content">
+
+                    <h1 id="ogc_api_features">OGC API - Features</h1>
+
+                    <p><a href="https://ogcapi.ogc.org/">OGC API standards</a> define modular API building blocks to
+                        spatially enable Web APIs
+                        in a consistent way. <a href="http://openapis.org">OpenAPI</a> is used to define the reusable
+                        API building blocks with responses in JSON and HTML.</p>
+
+                    <p>The OGC API family of standards is organized by resource type. OGC API Features
+                        specifies the fundamental API building blocks for interacting with features.
+                        The spatial data community uses the term &#8216;feature&#8217; for things in the real world
+                        that are of interest.</p>
+
+                    <p>If you are unfamiliar with the term &#8216;feature&#8217;, the explanations on
+                        <a href="https://www.w3.org/TR/sdw-bp/#spatial-things-features-and-geometry">Spatial Things,
+                            Features and Geometry</a>
+                        in the W3C/OGC Spatial Data on the Web Best Practice document provide more detail.</p>
+
+                    <h2 id="overview_of_ogc_api_features_part_1_core">Overview of OGC API - Features - Part 1: Core</h2>
+
+                    <p>OGC API Features provides access to collections of geospatial data.</p>
+
+                    <p><code>
+                        GET /collections
+                    </code></p>
+
+                    <p>Lists the collections of data on the server that can be queried (<a
+                            href="http://www.opengis.net/doc/IS/ogcapi-features-1/1.0#_collections_">section 7.13</a>),
+                        and each describes basic information about the geospatial data collection, like its id and
+                        description, as well as the
+                        spatial and temporal extents of all the data contained.</p>
+
+                    <p><code>
+                        GET /collections/buildings/items?bbox=160.6,-55.95,-170,-25.89
+                    </code></p>
+
+                    <p>Requests all the data in the collection &#8220;buildings&#8221; that is in the New Zealand
+                        economic zone.
+                        The response format (typically HTML or a <a href="http://geojson.org/">GeoJSON</a> feature
+                        collection, but GML is supported, too, and extensions can easily supply others) is determined
+                        using
+                        <a href="https://restfulapi.net/content-negotiation/">HTTP content negotiation</a>.</p>
+
+                    <p>Data is returned in pageable chunks, with each response containing a <code>next</code> link
+                        as many collections are quite large. The core specification supports a few basic filters, in
+                        addition to the <code>bbox</code> filter above, with extensions providing more advanced options
+                        (<a href="http://www.opengis.net/doc/IS/ogcapi-features-1/1.0#_items_">section 7.15</a>).</p>
+
+                    <p><code>
+                        GET /collections/{collectionId}/items/{featureId}
+                    </code></p>
+
+                    <p>Returns a single &#8216;feature&#8217; - something in the real-world (a building,
+                        a stream, a county, etc.) that typically is described by a geometry plus other properties.
+                        This provides a stable, canonical URL to link to the &#8216;thing&#8217;
+                        (<a href="http://www.opengis.net/doc/IS/ogcapi-features-1/1.0#_feature_">section 7.16</a>).</p>
+
+                    <p>See <a
+                            href="https://github.com/opengeospatial/ogcapi-features/tree/master/extensions/crs">here</a>
+                        for
+                        an overview of the extensions to support additional coordinate reference systems beyond WGS 84.
+                    </p>
+
+                    <h2 id="overview_of_ogc_api_features_part_2_coordinate_reference_systems_by_reference">Overview of
+                        OGC API - Features - Part 2: Coordinate Reference Systems By Reference</h2>
+
+                    <p>In Part 1 (Core) the default spatial Coordinate Reference System (CRS) is WGS 84
+                        longitude/latitude with or without height. Part 2 extends Part 1 to support presenting
+                        geometry-valued properties in a response document in additional CRSs. Each supported CRS must be
+                        identified by a URI such as http://www.opengis.net/def/crs/EPSG/0/4326.</p>
+
+                    <h3 id="discovery_of_information">Discovery of information</h3>
+
+                    <p>The server publishes the CRS information for each feature collection. For example, for a
+                        collection <code>buildings</code> the response to</p>
+
+                    <p><code>
+                        GET /collections/buildings
+                    </code></p>
+
+                    <p>will typically include the following properties:</p>
+
+                    <ul>
+                        <li><code>crs</code>: an array of CRS URIs supported by the service. If no value is provided,
+                            the default is <code>[ "http://www.opengis.net/def/crs/OGC/1.3/CRS84" ]</code>.
+                        </li>
+                        <li><code>storageCrs</code>: the URI of the CRS in which geometries are stored in the data set;
+                            if provided, this is a hint that features in this CRS can be retrieved without the need to
+                            apply a CRS transformation.
+                        </li>
+                    </ul>
+
+                    <p>In addition, a property <code>storageCrsCoordinateEpoch</code> may be provided, if the storage
+                        CRS is a dynamic coordinate reference system. This property can be used to declare the point in
+                        time at which coordinates are referenced to that CRS. It is expressed as a decimal year in the
+                        Gregorian calendar, e.g., epoch &#8216;2017.23&#8217; is 3rd March 2017 in the Gregorian
+                        calendar. Depending on the point in time when the geometries are requested and the required
+                        coordinate precision, the returned coordinates may need to be converted to the current
+                        coordinate epoch.</p>
+
+                    <h3 id="retrieve_geometries_in_a_specific_crs">Retrieve geometries in a specific CRS</h3>
+
+                    <p>In requests to fetch one or more features, add the parameter <code>crs</code> with one of the
+                        supported CRSs. For example, use the following to retrieve building in ETRS89 UTM Zone 32 North
+                        (a projected CRS):</p>
+
+                    <p><code>
+                        GET /collections/buildings/items?
+                        crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F25832
+                    </code></p>
+
+                    <p>As usual, don&#8217;t forget to percent-encode the parameter value.</p>
+
+                    <h3 id="use_a_bounding_box_with_another_crs">Use a bounding box with another CRS</h3>
+
+                    <p>By default, the <code>bbox</code> parameter specified in Part 1 expects a bounding box in the
+                        default CRS - unless another CRS is specified in the parameter <code>bbox-crs</code>.</p>
+
+                    <p>The following requests the buildings in Bonn, Germany, using a bounding box in ETRS89 UTM Zone 32
+                        North:</p>
+
+                    <p><code>
+                        GET /collections/buildings/items?
+                        bbox=280375,5577680,531792,5820212&amp;
+                        bbox-crs=http%3A%2F%2Fwww.opengis.net%2Fdef%2Fcrs%2FEPSG%2F0%2F25832
+                    </code></p>
+
+
+                </div>
+                <!-- End CONTENT -->
+                <!-- <p class="text-center">To find out more about the OGC please <a href="https://www.ogc.org" target="_blank">visit our public site</a>. <br><img src="img/OGC_Logo_2D_Blue_150px.jpg" alt="OGC Logo"></p> -->
+                <p class="text-center">To find out more about the OGC please visit our public site. <a
+                        class="btn px-1 bg-light" href="https://www.ogc.org" target="_blank" role="button"><img
+                        src="../img/OGC_Logo_Border_Blue_2D.svg" alt="OGC Logo" height="76"></a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; OGC 2020</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/opengeospatial" data-toggle="tooltip" data-placement="top"
+                           title="Visit the OGC Twitter page." alt="OGC Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <!-- <li class="list-inline-item">
+                      <a href="https://www.facebook.com/opengeospatial" data-toggle="tooltip" data-placement="top" title="Visit the OGC Facebook page." alt="OGC facebook">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                    </li> -->
+                    <li class="list-inline-item">
+                        <a href="http://www.linkedin.com/groups?mostPopular=&gid=55322" data-toggle="tooltip"
+                           data-placement="top" title="Visit the OGC Linkedin group." alt="OGC linkedin group">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.opengeospatial.org" data-toggle="tooltip" data-placement="top"
+                           title="Visit the OGC website." alt="OGC website">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li class="list-inline-item">
+                        <a href="https://www.opengeospatial.org/ogc/policies/privacy">Privacy Policy</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+<!-- Plugin JavaScript -->
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="../js/jqBootstrapValidation.js"></script>
+<script src="../js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="../js/agency.min.js"></script>
+
+<!-- More custom scripts -->
+<!-- <script src="../js/custom.js"></script> -->
+</body>
+
+</html>
