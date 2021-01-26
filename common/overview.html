@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168635-13"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-168635-13');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>OGC API - Common - Overview</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/agency.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="../">
+            <!-- OGC API -->
+            <!-- <img src="img/OGC_Logo_2D_Blue_150px.png" alt=""> -->
+            <img class="page-top-logo" src="../img/OGC_Logo_Border_Blue_2D.svg" alt="OGC Logo">
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#intro">Context</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#standards">APIs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#events">Sprints</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#blogs">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#documents">Documents</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#contact">Get In Touch</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead common">
+    <div class="ov-lay">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">OGC API - Common - Overview</div>
+                <!-- <div class="intro-heading">#OGCAPI</div> -->
+                <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#intro">Tell Me More</a> -->
+                <br>
+                <p class="intro-lead-in"><a style="color:white;" href="http://twitter.com/hashtag/OGCAPI"
+                                            target="_blank">#OGCAPI</a></p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Intro -->
+<section class="page-section" id="intro">
+    <div class="containter">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <!--          <h2 class="section-heading text-uppercase">OGC API - Common - Overview</h2>-->
+                <!-- <h3 class="section-subheading text-muted">A little about us</h3> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-justify">
+                <!-- Begin CONTENT -->
+                <div id="content">
+
+                    <h1 id="ogc_api_common">OGC API - Common - Overview</h1>
+
+                    <p><a href="https://ogcapi.ogc.org/">OGC API standards</a> define modular API building blocks to
+                        spatially enable Web APIs
+                        in a consistent way. <a href="http://openapis.org">OpenAPI</a> is used to define the reusable
+                        API building blocks with responses in JSON and HTML.</p>
+
+                    <p>The OGC API family of standards is organized by resource type. OGC API - Common defines the
+                        resources and access mechanisms which are useful for a client seeking to understand the
+                        offerings and capabilities of an API. The standard also provides a common connection between the
+                        API landing page and resource-specific details.</p>
+
+                    <h2 id="overview_of_ogc_api_common_part_1_core">Overview of OGC API - Common - Part 1: Core</h2>
+
+                    <p>The OGC API - Common - Part 1: Core Standard defines the common offerings and capabilities of an
+                        OGC API.</p>
+
+                    <p><code>
+                        GET /
+                    </code> <br> Retrieves the landing page. The purpose of the landing page is to provide clients with a starting
+                        point for using the API. Any resource exposed through an API can be accessed by following paths
+                        or links starting from the landing page.</p>
+
+                    <p>The landing page includes three metadata elements; title, description, and attribution. Only the
+                        title is required. These three elements describe the API as a whole. Clients can expect to
+                        encounter metadata which is more resource-specific as they follow links and paths from the
+                        landing page.</p>
+
+                    <p><code>
+                        GET /api
+                    </code><br>Retrieves the API definition which describes the capabilities provided by that API. This resource
+                        can be used by developers to understand the API, by software clients to connect to the server,
+                        and by development tools to support the implementation of servers and clients.</p>
+
+                    <p><code>
+                        GET /conformance
+                    </code><br>Provides a list declaring the modules that are implemented by the API. These modules are referred
+                        to as Conformance Classes. The list of Conformance Classes is key to understanding and using an
+                        OGC Web API.</p>
+
+                    <h2 id="overview_of_ogc_api_common_part_2_geospatial_data">Overview of OGC API - Common - Part 2:
+                        Geospatial Data</h2>
+
+                    <p>The purpose of the OGC API - Common - Part 2: Geospatial Data Standard is to provide a common
+                        connection between the API landing page and resource-specific details.</p>
+
+                    <p><code>
+                        GET /collections
+                    </code><br>Retrieves information which describes the set of supported Collections.</p>
+
+                    <p><code>
+                        GET /collections/{collectionId}
+                    </code><br>Retrieves descriptive information about a specific Collection.</p>
+
+                    <p><code>
+                        GET /collections/{collectionId}/items
+                    </code><br>Retrieves the resources offered by a specific Collection.</p>
+
+                </div>
+                <!-- End CONTENT -->
+                <!-- <p class="text-center">To find out more about the OGC please <a href="https://www.ogc.org" target="_blank">visit our public site</a>. <br><img src="img/OGC_Logo_2D_Blue_150px.jpg" alt="OGC Logo"></p> -->
+                <p class="text-center">To find out more about the OGC please visit our public site. <a
+                        class="btn px-1 bg-light" href="https://www.ogc.org" target="_blank" role="button"><img
+                        src="../img/OGC_Logo_Border_Blue_2D.svg" alt="OGC Logo" height="76"></a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; OGC 2020</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/opengeospatial" data-toggle="tooltip" data-placement="top"
+                           title="Visit the OGC Twitter page." alt="OGC Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <!-- <li class="list-inline-item">
+                      <a href="https://www.facebook.com/opengeospatial" data-toggle="tooltip" data-placement="top" title="Visit the OGC Facebook page." alt="OGC facebook">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                    </li> -->
+                    <li class="list-inline-item">
+                        <a href="http://www.linkedin.com/groups?mostPopular=&gid=55322" data-toggle="tooltip"
+                           data-placement="top" title="Visit the OGC Linkedin group." alt="OGC linkedin group">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.opengeospatial.org" data-toggle="tooltip" data-placement="top"
+                           title="Visit the OGC website." alt="OGC website">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li class="list-inline-item">
+                        <a href="https://www.opengeospatial.org/ogc/policies/privacy">Privacy Policy</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+<!-- Plugin JavaScript -->
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="../js/jqBootstrapValidation.js"></script>
+<script src="../js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="../js/agency.min.js"></script>
+
+<!-- More custom scripts -->
+<!-- <script src="../js/custom.js"></script> -->
+</body>
+
+</html>
