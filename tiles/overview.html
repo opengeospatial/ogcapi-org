@@ -124,78 +124,66 @@
 
                     <h2 id="overview_of_ogc_api_tiles_part_1_core">Overview of OGC API - Tiles - Part 1: Core</h2>
 
-                    <pre><code>
+                    <p><code>
                         GET /tiles
-                    </code></pre>
-                    <p>Retrieves the tiles description for this collection including the <code>links</code> to get a
+                    </code><br>Retrieves the tiles description for this collection including the <code>links</code> to get a
                         <code>tile</code>.</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}
-                    </code></pre>
-                    <p>Retrieves a tile in the requested tileMatrixSet, on the requested
+                    </code><br>Retrieves a tile in the requested tileMatrixSet, on the requested
                         tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile
                         has multiple collections (formerly refered as layers) with all selected features in the bounding
                         box of the tile.</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
-                    </code></pre>
-
-                    <p>Retrieves information about a point of a tile in the requested tileMatrixSet, on the requested
+                    </code><br>Retrieves information about a point of a tile in the requested tileMatrixSet, on the requested
                         tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile
                         has a single collection (formerly referred as layer) with all selected features in the bounding
                         box of the tile. The feature properties to include in the tile representation can be limited
                         using a query parameter.</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /tileMatrixSets
-                    </code></pre>
-                    <p>Retrieves all available tile matrix sets (tiling schemes).</p>
+                    </code><br>Retrieves all available tile matrix sets (tiling schemes).</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /tileMatrixSets/{tileMatrixSetId}
-                    </code></pre>
-                    <p>Retrieves a tile matrix sets (tiling scheme) by id</p>
+                    </code><br>Retrieves a tile matrix sets (tiling scheme) by id</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /collections
-                    </code></pre>
-                    <p>Lists the collections of data on the server that can be queried,
+                    </code><br>Lists the collections of data on the server that can be queried,
                         and each describes basic information about the geospatial data collection, like its id and
                         description, as well as the
                         spatial and temporal extents of all the data contained.</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /collections/{collectionId}
-                    </code></pre>
-                    <p>Retrieves a description of a collection.</p>
+                    </code><br>Retrieves a description of a collection.</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /collections/{collectionId}/tiles
-                    </code></pre>
-                    <p>Retrieves the tiles description for this collection including the <code>links</code> to get a
+                    </code><br>Retrieves the tiles description for this collection including the <code>links</code> to get a
                         <code>tile</code>, the <code>TileMatrixSetLink</code> and the <code>infoTemplate</code>.</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /collections/{collectionId}/tiles/{tileMatrixSetId}
-                    </code></pre>
-                    <p>Retrieves the tiles description for this collection including the <code>links</code> to get a
+                    </code><br>Retrieves the tiles description for this collection including the <code>links</code> to get a
                         <code>tile</code>, the <code>TileMatrixSetLink</code> and the <code>infoTemplate</code>.</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}
-                    </code></pre>
-                    <p>Retrieves the tile in the requested tileMatrixSet, on the requested tileMatrix in the
+                    </code><br>Retrieves the tile in the requested tileMatrixSet, on the requested tileMatrix in the
                         TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile has a single
                         collection (formerly referred to as a layer) with all selected features in the bounding box of
                         the tile. The feature properties to include in the tile representation can be limited using a
                         query parameter.</p>
 
-                    <pre><code>
+                    <p><code>
                         GET /collections/{collectionId}/tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}/info
-                    </code></pre>
-                    <p>Retrieves information on a point of a tile in the requested tileMatrixSet, on the requested
+                    </code><br>Retrieves information on a point of a tile in the requested tileMatrixSet, on the requested
                         tileMatrix in the TileMatrixSet, with the requested tile indices (tileRow, tileCol). The tile
                         has a single collection (formerly referred as layer) with all selected features in the bounding
                         box of the tile. The feature properties to include in the tile representation can be limited
