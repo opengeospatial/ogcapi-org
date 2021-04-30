@@ -2,12 +2,14 @@
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url('../img/header-bg.jpg');
-  background-color: $gray-600;
+  height: 680px;
+  //background-image: url('../img/header-bg.jpg');
+  background-image: url('../img/OGC_APIs_banner.jpg');
+  background-color: $gray-900;//$gray-600;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;//cover; //auto; //contain;
   .intro-text {
     padding-top: 150px;
     padding-bottom: 100px;
