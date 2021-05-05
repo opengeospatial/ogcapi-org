@@ -20,7 +20,8 @@
 @import "layout/contact.scss";
 @import "layout/footer.scss";
 
-// Pages Custom
+// Pages Custom - as of 2021-04-29 this has changed and these don't need to be loaded
+// because they now want a common banner across the entire site. But we'll leave them for now.
 @import "pages/mastheadcommon.scss";
 @import "pages/mastheadcoverages.scss";
 @import "pages/mastheadedr.scss";
