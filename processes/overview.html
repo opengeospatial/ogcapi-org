@@ -123,9 +123,8 @@
 
                     <p>The OGC API family of standards is organized by resource type. The draft OGC API - Processes
                         standard enables the execution of computing processes and the retrieval of metadata describing
-                        their purpose and functionality. Typically, these processes combine raster, vector, and/or
-                        coverage data with well-defined algorithms to produce new raster, vector, and/or coverage
-                        information.</p>
+                        their purpose and functionality. Typically, these processes execute well-defined algorithms that
+                        ingest vector and/or coverage data to produce new datasets.</p>
 
                     <h2 id="overview_of_ogc_api_processes_part_1_core">Overview of OGC API - Processes - Part 1:
                         Core</h2>
@@ -139,27 +138,30 @@
                     </code><br>Returns a detailed description of a process.</p>
 
                     <p><code>
-                        GET /processes/{process-id}/jobs
-                    </code><br>Returns the running and finished jobs for a process (optional).</p>
-
-                    <p><code>
-                        POST /processes/{process-id}/jobs
+                        POST /processes/{process-id}/execution
                     </code><br>
-                        Executes a process, i.e. creates a new job. Inputs and outputs will have to be specified in a
-                        JSON document that needs to be send in the POST body.</p>
+                        Executes a process (asynchronous execution will create a new job). Inputs and outputs can be specified in a JSON
+                        document that needs to be sent in the POST body.</p>
+
+                    <h4>Job Management end-points</h4>
+                    <p>(required for asynchronous execution, but optional for synchronous)</p>
 
                     <p><code>
-                        GET /processes/{process-id}/jobs/{job-id}
-                    </code><br>Returns the status of a job of a process.</p>
+                        GET /jobs
+                    </code><br>Returns the running and finished jobs.</p>
 
                     <p><code>
-                        DELETE /processes/{process-id}/jobs/{job-id}
+                        GET /jobs/{job-id}
+                    </code><br>Returns the status of a job.</p>
+
+                    <p><code>
+                        DELETE /jobs/{job-id}
                         </code><br>Cancel a job execution.</p>
 
                     <p><code>
-                        GET /processes/{process-id}/jobs/{job-id}/results
+                        GET /jobs/{job-id}/results
                     </code><br>
-                        Returns the result of a job of a process.</p>
+                        Returns the result of a job.</p>
 
 
                 </div>
