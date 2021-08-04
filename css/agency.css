@@ -152,7 +152,7 @@ img.approve_badge {
   border-color: #00468c !important;
   color: white;
 }
-
+/* Here is a change for testing */
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
