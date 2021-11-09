@@ -1,4 +1,10 @@
 // Global styling for this template
+@include font-face('Mont', '../font/Mont/Mont-Heavy', 800, normal, woff2);
+@include font-face('Mont', '../font/Mont/Mont-SemiBold', 600, normal, woff2);
+@include font-face('Mont', '../font/Mont/Mont-Bold', bold, normal, woff2);
+@include font-face('Mont Book', '../font/Mont/Mont-Book', normal, normal, woff2);
+@include font-face('Mont', '../font/Mont/Mont-Regular', normal, normal, woff2);
+
 body {
   overflow-x: hidden;
   @include body-font;
