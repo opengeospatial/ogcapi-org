@@ -67,9 +67,9 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="../#events">Sprints</a>
                 </li>
-<li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="../#videos">Videos</a>
-        </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="../#videos">Videos</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="../#blogs">Blogs</a>
                 </li>
@@ -87,17 +87,17 @@
 <!-- Header -->
 <!--<header class="masthead tiles">-->
 <header class="masthead">
-<!--    <div class="ov-lay">-->
-<!--        <div class="container">-->
-<!--            <div class="intro-text">-->
-<!--                <div class="intro-lead-in">OGC API - Tiles - Overview</div>-->
-                <!-- <div class="intro-heading">#OGCAPI</div> -->
-                <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#intro">Tell Me More</a> -->
-<!--                <br>-->
-<!--                <p class="intro-lead-in"><a style="color:white;" href="http://twitter.com/hashtag/OGCAPI" target="_blank">#OGCAPI</a></p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <!--    <div class="ov-lay">-->
+    <!--        <div class="container">-->
+    <!--            <div class="intro-text">-->
+    <!--                <div class="intro-lead-in">OGC API - Tiles - Overview</div>-->
+    <!-- <div class="intro-heading">#OGCAPI</div> -->
+    <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#intro">Tell Me More</a> -->
+    <!--                <br>-->
+    <!--                <p class="intro-lead-in"><a style="color:white;" href="http://twitter.com/hashtag/OGCAPI" target="_blank">#OGCAPI</a></p>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 </header>
 
 <!-- Intro -->
@@ -116,69 +116,111 @@
 
                     <h1 id="ogc_api_tiles">OGC API - Tiles</h1>
 
-		    <p>OGC API - Tiles is a standards API that provides tiles of geospatial information. Different forms of geospatial information are supported, such as vector features, coverages and maps (or imagery).</p>
+                    <p>OGC API - Tiles is a candidate standard API that provides tiles of geospatial information.</p>
 
-		    <p>Vector data represents geospatial objects as points, lines, and polygons. Tiles of vector data (i.e. Vector Tiles) represent subsets of vector data covering a large area (e.g. lines representing rivers in a country).</p>
+                    <p>Different forms of geospatial information are supported, such as tiles of vector features
+                        ("vector tiles"), coverages, maps (or imagery) and potentially eventually additional types of
+                        tiles of geospatial information.</p>
 
-		    <p>In this context, a map is essentially an image representing at least one type of geospatial information. Tiles of map data (i.e. Map Tiles) represent subsets of map data covering a large area (e.g. a satellite image).</p>
+                    <p>Vector data represents geospatial objects such as points, lines, and polygons. Tiles of vector
+                        feature data (i.e. Vector Tiles) represent partitions of vector data covering a large area (e.g.
+                        lines representing rivers in a country).</p>
 
-		    <h2>Core</h2>
+                    <p>In this context, a map is essentially an image representing at least one type of geospatial
+                        information. Tiles of maps (i.e. Map Tiles) represent subsets of maps covering a large
+                        area (e.g. a satellite image).</p>
 
-		    <p>The Core conformance class of OGC API - Tiles simply requires that tiles can be retrieved according to a <a href="https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-matrix-set-concept">tile matrix set</a>, using some template URL made up of:</p>
+                    <h2>Core</h2>
 
-		    <ul>
-			    <li>a tile matrix,</li>
-			    <li>a tile row, and</li>
-			    <li>a tile column.</li>
-		    </ul>
+                    <p>The <b><em>Core</em></b> conformance class of <em>OGC API - Tiles</em> simply requires that tiles can be retrieved
+                        according to a <a
+                                href="https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-matrix-set-concept">tile
+                            matrix set</a>, using some template URL made up of:</p>
 
-		    <p>That URL template and information about the tileset can either be provided through the TileSet conformance class, or by some outside mechanism.</p>
+                    <ul>
+                        <li>a tile matrix,</li>
+                        <li>a tile row, and</li>
+                        <li>a tile column.</li>
+                    </ul>
 
-		    <h3>TileSet & TileSets List</h3>
-		    The TileSets List and TileSet conformance classes defines transportable end-points:</p>
+                    <p>That URL template and information about the tileset can either be provided through the
+                        <b><em>TileSet</em></b>
+                        conformance class, or by some outside mechanism.</p>
 
-		    <ul>
-			    <li><code>GET .../tiles</code> Retrieves the list of tilesets available (links with <code>http://www.opengis.net/def/rel/ogc/1.0/tileset-*</code> relation types)</li>
-			    <li><code>GET .../tiles/{tileMatrixSetId}</code> Retrieves the metadata for a specific tileset (tiled according to a particular tile matrix set).</li>
-			    <li><code>GET .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</code> Retrieves a tile from a specific tileset (tiled according to a particular tile matrix set) in the requested tile matrix set, on the requested tile matrix (e.g. zoom level) with the requested row and column.</li>
-		    </ul>
+                    <h3>TileSet & TileSets List</h3>
+                    The <b><em>TileSets List</em></b> and <b><em>TileSet</em></b> conformance classes defines transportable end-points:</p>
 
-		    <h3>DataSet & GeoData Tile Sets</h3>
+                    <ul>
 
-		    The DataSet TileSets conformance class defines how a list of tilesets can be associated to an OGC API dataset / landing page, while the GeoData TileSets conformance class defines how a list of tilesets can be associated to an OGC API collection.</p>
+                        <li><code>GET .../tiles</code>
+                            Retrieves the list of tilesets available (<code>tilesets</code> array property whose elements contain
+                            <code>links</code> to the tileset with <code>self</code> relation type)
+                        </li>
 
-		    By combining Tiles building blocks with other OGC API standards, different types of tilesets can be provided from a single API:</p>
+                        <li><code>GET .../tiles/{tileMatrixSetId}</code> Retrieves the <a href="https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-set-metadata" target="_blank">metadata</a> for a specific tileset
+                            (tiled according to a particular tile matrix set).
+                        </li>
+                        <li><code>GET .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</code> Retrieves a
+                            tile from a specific tileset (tiled according to a particular tile matrix set) in the
+                            requested tile matrix set, on the requested tile matrix (e.g. zoom level) with the requested
+                            row and column.
+                        </li>
+                    </ul>
 
-		    <h4>Vector tiles:</h4>
-		    <ul>
-			    <li><code>{datasetAPI}/tiles</code> Dataset tilesets (multi-layer vector tiles)</li>
-			    <li><code>{datasetAPI}/collections/{collectionId}/tiles</code> Collection tilesets (vector tiles)</li>
-		    </ul>
+                    <h3>DataSet & GeoData Tile Sets</h3>
 
-		    <h4>Map tiles (OGC API - Maps):</h4>
-		    <ul>
-			    <li><code>{datasetAPI}/map/tiles</code> Dataset map tilesets</li>
-			    <li><code>{datasetAPI}/collections/{collectionId}/map/tiles</code> Collection map tilesets</li>
-		    </ul>
+                    <p>The <b><em>DataSet TileSets</em></b> conformance class defines how a list of tilesets can be associated to an OGC
+                    API dataset / landing page, while the <b><em>GeoData TileSets</em></b> conformance class defines how a list of
+                    tilesets can be associated to an OGC API collection.</p>
 
-		    <h4>Coverage tiles (OGC API - Coverages):</h4>
-		    <ul>
-			    <li><code>{datasetAPI}/collections/{collectionId}/coverage/tiles</code> Collection coverage tilesets</li>
-		    </ul>
+                    <p>By combining <em>Tiles</em> building blocks with other OGC API standards, different types of tilesets can be
+                    provided from a single API:</p>
 
-		    <h4>Styled vector tiles, e.g. filtered by scale (OGC API - Styles):</h4>
-		    <ul>
-			    <li><code>{datasetAPI}/styles/{styleId}/tiles</code> Styled dataset tilesets (multi-layer vector tiles)</li>
-			    <li><code>{datasetAPI}/collections/{collectionId}/styles/{styleId}/tiles</code> Styled collection tilesets (vector tiles)</li>
-		    </ul>
+                    <h4>Vector tiles:</h4>
+                    <p>(link relation: http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector)</p>
+                    <ul>
+                        <li><code>{datasetAPI}/tiles</code> Dataset tilesets (multi-layer vector tiles)</li>
+                        <li><code>{datasetAPI}/collections/{collectionId}/tiles</code> Collection tilesets (vector
+                            tiles)
+                        </li>
+                    </ul>
 
-		    <h4>Styled map tiles (OGC API - Maps and OGC API - Styles):</h4>
-		    <ul>
-			    <li><code>{datasetAPI}/styles/{styleId}/map/tiles</code> Styled dataset map tilesets</li>
-			    <li><code>{datasetAPI}/collections/{collectionId}/styles/{styleId}/map/tiles</code> Styled Collection map tilesets</li>
-		    </ul>
+                    <h4>Map tiles (OGC API - Maps):</h4>
+                    <p>(link relation: http://www.opengis.net/def/rel/ogc/1.0/tilesets-map)</p>
+                    <ul>
+                        <li><code>{datasetAPI}/map/tiles</code> Dataset map tilesets</li>
+                        <li><code>{datasetAPI}/collections/{collectionId}/map/tiles</code> Collection map tilesets</li>
+                    </ul>
 
-		    <p>&nbsp;</p>
+                    <h4>Coverage tiles (OGC API - Coverages):</h4>
+                    <p>(link relation: http://www.opengis.net/def/rel/ogc/1.0/tilesets-coverage)</p>
+                    <ul>
+                        <li><code>{datasetAPI}/collections/{collectionId}/coverage/tiles</code> Collection coverage
+                            tilesets
+                        </li>
+                    </ul>
+
+                    <h4>Styled vector tiles, e.g. filtered by scale (OGC API - Styles):</h4>
+                    <p>(link relation: http://www.opengis.net/def/rel/ogc/1.0/tilesets-vector)</p>
+                    <ul>
+                        <li><code>{datasetAPI}/styles/{styleId}/tiles</code> Styled dataset tilesets (multi-layer vector
+                            tiles)
+                        </li>
+                        <li><code>{datasetAPI}/collections/{collectionId}/styles/{styleId}/tiles</code> Styled
+                            collection tilesets (vector tiles)
+                        </li>
+                    </ul>
+
+                    <h4>Styled map tiles (OGC API - Maps and OGC API - Styles):</h4>
+                    <p>(link relation: http://www.opengis.net/def/rel/ogc/1.0/tilesets-map)</p>
+                    <ul>
+                        <li><code>{datasetAPI}/styles/{styleId}/map/tiles</code> Styled dataset map tilesets</li>
+                        <li><code>{datasetAPI}/collections/{collectionId}/styles/{styleId}/map/tiles</code> Styled
+                            Collection map tilesets
+                        </li>
+                    </ul>
+
+                    <p>&nbsp;</p>
 
                 </div>
                 <!-- End CONTENT -->
