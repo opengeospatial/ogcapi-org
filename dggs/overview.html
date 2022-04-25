@@ -2,19 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168635-13"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'UA-168635-13');
-    </script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -301,6 +288,52 @@
 
 <!-- More custom scripts -->
 <!-- <script src="../js/custom.js"></script> -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCQMLFG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NCQMLFG');</script>
+  <!-- End Google Tag Manager -->
+  <link type="text/css" rel="stylesheet" href="../css/cookiepanel.css" />
+  
+  <div id='cookiePanel'>
+    <p>Do you consent to the use of cookies on this site?</p>
+    <button id="btnConsentGranted" class="btnConsent">Yes</button>
+    <button id="btnConsentDenied" class="btnConsent">No</button>
+    <a id="detailToggle" href="#detailPanel" rel="modal:open">Set Specific Preferences</a>
+    <!-- The Modal -->
+    <div id="detailPanel" class="modal">
+      <p>Required Cookies (minimal set for site operation)<br/>
+        <label class="switch">
+          <input type="checkbox" checked disabled>
+          <span class="slider round"></span>
+        </label>
+      </p>
+      <p>Google Analytics<br/>
+        <label class="switch">
+          <input id="opt_analytics_storage" type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+      </p>
+      <p>Google Ads:<br/>
+        <label class="switch">
+          <input id="opt_ad_storage" type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+      </p>
+      <hr/>
+      <p>Make selection then click "Yes" above.</p>
+      <!-- <a href="#" rel="modal:close">Close</a> -->
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/cookiepanel.js"></script>
 </body>
 
 </html>
