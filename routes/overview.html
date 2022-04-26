@@ -178,7 +178,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <span class="copyright">Copyright &copy; OGC 2020</span>
+                <span class="copyright">Copyright &copy; OGC <span id="year"></span></span>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
@@ -226,8 +226,9 @@
 <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script>
     $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
+        $('[data-toggle="tooltip"]').tooltip();
+    	$("#year").text( (new Date).getFullYear() );
+	})
 </script>
 <!-- Plugin JavaScript -->
 <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -239,8 +240,6 @@
 <!-- Custom scripts for this template -->
 <script src="../js/agency.min.js"></script>
 
-<!-- More custom scripts -->
-<!-- <script src="../js/custom.js"></script> -->
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCQMLFG"
@@ -288,5 +287,4 @@
   </div>
   <script type="text/javascript" src="../js/cookiepanel.js"></script>
 </body>
-
 </html>
