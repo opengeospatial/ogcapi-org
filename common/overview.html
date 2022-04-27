@@ -101,113 +101,63 @@
                 <!-- Begin CONTENT -->
                 <div id="content">
 
-                    <h1 id="ogc-api---discrete-global-grid-systems">OGC API - Discrete Global Grid Systems</h1>
+                    <h1 id="ogc_api_common">OGC API - Common - Overview</h1>
 
-                    <p>The draft OGC API - Discrete Global Grid Systems standard specifies an API for accessing data
-                        organised according to a Discrete Global Grid System (DGGS). A DGGS is a spatial reference
-                        system that uses a hierarchical tessellation of cells to partition and address the globe. DGGS
-                        are characterized by the properties of their cell structure, geo-encoding, quantization strategy
-                        and associated mathematical functions.</p>
+                    <p><a href="https://ogcapi.ogc.org/">OGC API standards</a> define modular API building blocks to
+                        spatially enable Web APIs
+                        in a consistent way. <a href="http://openapis.org">OpenAPI</a> is used to define the reusable
+                        API building blocks with responses in JSON and HTML.</p>
 
-                    <p>The API has been designed as a profile of two other OGC APIs:</p>
+                    <p>The OGC API family of standards is organized by resource type. OGC API - Common defines the
+                        resources and access mechanisms which are useful for a client seeking to understand the
+                        offerings and capabilities of an API. The standard also provides a common connection between the
+                        API landing page and resource-specific details.</p>
 
-                    <ul>
-                        <li>OGC API - Features</li>
-                        <li>OGC API - Processes</li>
-                    </ul>
+                    <h2 id="overview_of_ogc_api_common_part_1_core">Overview of OGC API - Common - Part 1: Core</h2>
 
+                    <p>The OGC API - Common - Part 1: Core Standard defines the common offerings and capabilities of an
+                        OGC API.</p>
 
-                    <p>NOTE: In the future, a single interface may emerge as the preferred option. This will be
-                        determined during development of the candidate standard.</p>
-
-                    <h2 id="overview-of-the-ogc-api---discrete-global-grid-systems-interface-based-on-ogc-api---features">
-                        Overview of the OGC API - Discrete Global Grid Systems interface based on OGC API -
-                        Features</h2>
-
-                    <p><code>GET /</code></p>
-
-                    <p>Retrieves the landing page. The purpose of the landing page is to provide clients with a starting
+                    <p><code>
+                        GET /
+                    </code> <br> Retrieves the landing page. The purpose of the landing page is to provide clients with a starting
                         point for using the API. Any resource exposed through an API can be accessed by following paths
                         or links starting from the landing page.</p>
 
-                    <p><code>GET /conformance</code></p>
+                    <p>The landing page includes three metadata elements; title, description, and attribution. Only the
+                        title is required. These three elements describe the API as a whole. Clients can expect to
+                        encounter metadata which is more resource-specific as they follow links and paths from the
+                        landing page.</p>
 
-                    <p>Provides a list declaring the modules that are implemented by the API. These modules are referred
+                    <p><code>
+                        GET /api
+                    </code><br>Retrieves the API definition which describes the capabilities provided by that API. This resource
+                        can be used by developers to understand the API, by software clients to connect to the server,
+                        and by development tools to support the implementation of servers and clients.</p>
+
+                    <p><code>
+                        GET /conformance
+                    </code><br>Provides a list declaring the modules that are implemented by the API. These modules are referred
                         to as Conformance Classes. The list of Conformance Classes is key to understanding and using an
                         OGC Web API.</p>
 
-                    <p><code>GET /collections</code></p>
+                    <h2 id="overview_of_ogc_api_common_part_2_geospatial_data">Overview of OGC API - Common - Part 2:
+                        Geospatial Data</h2>
 
-                    <p>The list of supported collections.</p>
+                    <p>The purpose of the OGC API - Common - Part 2: Geospatial Data Standard is to provide a common
+                        connection between the API landing page and resource-specific details.</p>
 
-                    <p><code>GET /collections/{collectionId}</code></p>
+                    <p><code>
+                        GET /collections
+                    </code><br>Retrieves information which describes the set of supported Collections.</p>
 
-                    <p>Describes a particular Feature Collection</p>
+                    <p><code>
+                        GET /collections/{collectionId}
+                    </code><br>Retrieves descriptive information about a specific Collection.</p>
 
-                    <p><code>GET /collections/{collectionId}/items</code></p>
-
-                    <p>Access the list of Features within a Collection. Can list either all the Features, or a
-                        particular subset based on a, WGS84 bbox, a coarse DGGS CellID (equivalent to a bbox), or a DGGS
-                        quadrilateral specified by two DGGS CellIDs (equivalent to a bbox)</p>
-
-                    <p><code>GET /collections/{collectionId}/items/{itemId}</code></p>
-
-                    <p>Access the definition of a particular Feature</p>
-
-                    <h2 id="overview-of-the-ogc-api---discrete-global-grid-systems-interface-based-on-ogc-api---processes">
-                        Overview of the OGC API - Discrete Global Grid Systems interface based on OGC API -
-                        Processes</h2>
-
-                    <p><code>GET /</code></p>
-
-                    <p>Retrieves the landing page. The purpose of the landing page is to provide clients with a starting
-                        point for using the API. Any resource exposed through an API can be accessed by following paths
-                        or links starting from the landing page.</p>
-
-                    <p><code>GET /conformance</code></p>
-
-                    <p>Provides a list declaring the modules that are implemented by the API. These modules are referred
-                        to as Conformance Classes. The list of Conformance Classes is key to understanding and using an
-                        OGC Web API.</p>
-
-                    <p><code>GET /collections</code></p>
-
-                    <p>The list of supported collections.</p>
-
-                    <p><code>GET /collections/{collectionId}</code></p>
-
-                    <p>Describes a particular DGGS</p>
-
-                    <p><code>GET /collections/{collectionId}/zones</code></p>
-
-                    <p>Access the list of zones in a given DGGS. Can list either all the zones, or a particular subset
-                        based on resolution, WGS84 bbox, or list of containing zones (e.g., polygon defined in DGGS
-                        terms)</p>
-
-                    <p><code>GET /collections/{collectionId}/zones</code></p>
-
-                    <p>Access the definition of a particular zone.</p>
-
-                    <p><code>GET /collections/{collectionId}/neighbors</code></p>
-
-                    <p>Get the list of neighboring zones, to a given zone.</p>
-
-                    <p><code>GET /collections/{collectionId}/parents</code></p>
-
-                    <p>Get the list of parent zones, to a given zone.</p>
-
-                    <p><code>GET /collections/{collectionId}/children</code></p>
-
-                    <p>Get the list of child zones, to a given zone.</p>
-
-                    <p><code>GET /collections/{collectionId}/point</code></p>
-
-                    <p>Returns the id of the zone containing the given point, at the given resolution.</p>
-
-                    <p><code>GET /collections/{collectionId}/polygon</code></p>
-
-                    <p>Lists zones contained in the polygon.</p>
-
+                    <p><code>
+                        GET /collections/{collectionId}/items
+                    </code><br>Retrieves the resources offered by a specific Collection.</p>
 
                 </div>
                 <!-- End CONTENT -->
