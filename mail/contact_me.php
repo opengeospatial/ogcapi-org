@@ -1,4 +1,7 @@
 <?php
+
+require_once "../config.php";
+
 // IN the htaccess you can set up the following
 // SetEnv DEV_ENV development
 // and it will always make this test so that you don't execute the mailchimp code
@@ -52,8 +55,8 @@ return true;
 
 
 function syncMailchimp($data,$test) {
-  $apiKey = '49662d62e6bf0cdbac9e45703e4d1827-us4';
-  $listId = '4e4528fd9d';
+  $apiKey = _MAILCHIMP_API_KEY;
+  $listId = _MAILCHIMP_LIST_ID;
 
   $memberId = md5(strtolower($data['email']));
   $dataCenter = substr($apiKey,strpos($apiKey,'-')+1);
