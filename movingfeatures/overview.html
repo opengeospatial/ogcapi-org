@@ -114,7 +114,7 @@
 
                     <p>The OGC API - Moving Features draft standard is an extension of the <a href="../common" target="_blank">OGC API - Common</a> and the <a href="../features" target="_blank">OGC API - Features</a> standards.</p>
 
-                    <p>Catalog of Moving Feature Collection</p>
+                    <p><b>Catalog of Moving Feature Collection</b></p>
 
                     <code>GET /collections</code>
                     <p>Retrieve catalogs of moving features collection.</p>
@@ -123,13 +123,13 @@
                     <p>Register metadata about a collection of moving features.</p>
 
                     <code>GET /collections/{collectionId}</code>
-                    <p>Access metadata about the collection with id collectionId.</p>
+                    <p>Access metadata about the collection with id <b>collectionId</b>.</p>
 
                     <code>DELETE /collections/{collectionId}</code>
                     <p>The collection catalog with id collectionId and including metadata and moving features SHOULD be deleted.</p>
 
                     <code>PUT /collections/{collectionId}</code>
-                    <p>Replace metadata about the collection with id collectionId.</p>
+                    <p>Replace metadata about the collection with id <b>collectionId</b>.</p>
 
                     <p><b>MovingFeature</b></p>
 
@@ -137,38 +137,38 @@
                     <p>Retrieve moving feature collection to access the static information of the moving feature by simple filtering and a limit.</p>
 
                     <code>POST /collections/{collectionId}/items</code>
-                    <p>Insert a set of moving features or a moving feature into a collection with id collectionId.</p>
+                    <p>Insert a set of moving features or a moving feature into a collection with id <b>collectionId</b>.</p>
 
                     <code>GET /collections/{collectionId}/items/{mFeatureId}</code>
-                    <p>Access the static data of the moving feature with id mFeatureId. The static data of a moving feature is not included temporal geometries and temporal properties.</p>
+                    <p>Access the static data of the moving feature with id <b>mFeatureId</b>. The static data of a moving feature is not included temporal geometries and temporal properties.</p>
 
                     <code>DELETE /collections/{collectionId}/items/{mFeatureId}</code>
-                    <p>Delete a single moving feature with id mFeatureId and including temporal geometries and properties.</p>
+                    <p>Delete a single moving feature with id <b>mFeatureId</b> and including temporal geometries and properties.</p>
 
                     <p><b>TemporalGeometry</b></p>
 
                     <code>GET /collections/{collectionId}/items/{mFeatureId}/tgeometries</code>
-                    <p>Retrieve the movement data of the single moving feature with id mFeatureId.</p>
+                    <p>Retrieve the movement data of the single moving feature with id <b>mFeatureId</b>.</p>
 
                     <code>POST /collections/{collectionId}/items/{mFeatureId}/tgeometries</code>
-                    <p>Add movement data into the moving feature with id mFeatureId.</p>
+                    <p>Add movement data into the moving feature with id <b>mFeatureId</b>.</p>
 
                     <code>DELETE /collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}</code>
-                    <p>Delete a singe temporal geometry with id tGeometryId.</p>
+                    <p>Delete a singe temporal geometry with id <b>tGeometryId</b>.</p>
 
                     <p><b>TemporalProperty</b></p>
 
                     <code>GET /collections/{collectionId}/items/{mFeatureId}/tproperties</code>
-                    <p>Retrieve the static information of the temporal property data that included a single moving feature with id mFeatureId. The static data of a temporal property is not included temporal values (property values).</p>
+                    <p>Retrieve the static information of the temporal property data that included a single moving feature with id mFeatureId. The static data of a temporal property is not included temporal values (property <b>values</b>).</p>
 
                     <code>POST /collections/{collectionId}/items/{mFeatureId}/tproperties</code>
-                    <p>Add temporal property data into a moving feature with id mFeatureId.</p>
+                    <p>Add temporal property data into a moving feature with id <b>mFeatureId</b>.</p>
 
                     <code>GET /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}</code>
-                    <p>Retrieve a temporal values with a specified name tPropertyName of temporal property.</p>
+                    <p>Retrieve a temporal values with a specified name <b>tPropertyName</b> of temporal property.</p>
 
                     <code>POST /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}</code>
-                    <p>Add more temporal values data into a temporal property with id tPropertyName.</p>
+                    <p>Add more temporal values data into a temporal property with id <b>tPropertyName</b>.</p>
 
 
                 </div>
