@@ -103,7 +103,7 @@
 
                     <h1 id="ogc_api_tiles">OGC API - Tiles</h1>
 
-                    <p>OGC API - Tiles is a candidate standard API that provides tiles of geospatial information.</p>
+                    <p>OGC API - Tiles specifies a standard for Web APIs that provide tiles of geospatial information.</p>
 
                     <p>Different forms of geospatial information are supported, such as tiles of vector features
                         ("vector tiles"), coverages, maps (or imagery) and potentially eventually additional types of
@@ -121,7 +121,7 @@
 
                     <p>The <b><em>Core</em></b> conformance class of <em>OGC API - Tiles</em> simply requires that tiles can be retrieved
                         according to a <a
-                                href="https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-matrix-set-concept">tile
+                                href="https://docs.opengeospatial.org/is/17-083r4/17-083r4.html#toc14">tile
                             matrix set</a>, using some template URL made up of:</p>
 
                     <ul>
@@ -131,11 +131,11 @@
                     </ul>
 
                     <p>That URL template and information about the tileset can either be provided through the
-                        <b><em>TileSet</em></b>
+                        <b><em>Tileset</em></b>
                         conformance class, or by some outside mechanism.</p>
 
-                    <h3>TileSet & TileSets List</h3>
-                    The <b><em>TileSets List</em></b> and <b><em>TileSet</em></b> conformance classes defines transportable end-points:</p>
+                    <h3>Tileset & Tilesets List</h3>
+                    The <b><em>Tilesets List</em></b> and <b><em>Tileset</em></b> conformance classes defines transportable end-points:</p>
 
                     <ul>
 
@@ -144,7 +144,7 @@
                             <code>links</code> to the tileset with <code>self</code> relation type)
                         </li>
 
-                        <li><code>GET .../tiles/{tileMatrixSetId}</code> Retrieves the <a href="https://docs.opengeospatial.org/DRAFTS/17-083r3.html#tile-set-metadata" target="_blank">metadata</a> for a specific tileset
+                        <li><code>GET .../tiles/{tileMatrixSetId}</code> Retrieves the <a href="https://docs.opengeospatial.org/is/17-083r4/17-083r4.html#toc20" target="_blank">metadata</a> for a specific tileset
                             (tiled according to a particular tile matrix set).
                         </li>
                         <li><code>GET .../tiles/{tileMatrixSetId}/{tileMatrix}/{tileRow}/{tileCol}</code> Retrieves a
@@ -154,10 +154,10 @@
                         </li>
                     </ul>
 
-                    <h3>DataSet & GeoData Tile Sets</h3>
+                    <h3>Dataset & GeoData Tilesets</h3>
 
-                    <p>The <b><em>DataSet TileSets</em></b> conformance class defines how a list of tilesets can be associated to an OGC
-                    API dataset / landing page, while the <b><em>GeoData TileSets</em></b> conformance class defines how a list of
+                    <p>The <b><em>Dataset Tilesets</em></b> conformance class defines how a list of tilesets can be associated to an OGC
+                    API dataset / landing page, while the <b><em>GeoData Tilesets</em></b> conformance class defines how a list of
                     tilesets can be associated to an OGC API collection.</p>
 
                     <p>By combining <em>Tiles</em> building blocks with other OGC API standards, different types of tilesets can be
@@ -292,7 +292,7 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCQMLFG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -301,7 +301,7 @@
   })(window,document,'script','dataLayer','GTM-NCQMLFG');</script>
   <!-- End Google Tag Manager -->
   <link type="text/css" rel="stylesheet" href="../css/cookiepanel.css" />
-  
+
   <div id='cookiePanel'>
     <p>Do you consent to the use of cookies on this site?</p>
     <button id="btnConsentGranted" class="btnConsent">Yes</button>
