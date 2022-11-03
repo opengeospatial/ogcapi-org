@@ -119,8 +119,28 @@
                     <p>OGC API - Maps is a draft API standard that provides maps representing geospatial data.</p>
 
                     <p><code>
+                        GET {datasetRoot}/
+                    </code><br>Accesses the Landing page.</p>
+
+                    <p><code>
+                        GET {datasetRoot}/conformance
+                    </code><br>Retrieves the Conformance declaration.</p>
+
+                    <p><code>
+                        GET {datasetRoot}/map
+                    </code><br>Dataset maps in the default style.</p>
+
+                    <p><code>
+                        GET {datasetRoot}/styles/{styleId}/map
+                    </code><br>Retrieves the Dataset maps.</p>
+
+                    <p><code>
+                        GET {datasetRoot}/map/tiles/{tileMatrixSetId}/…​
+                    </code><br>Retrieves the Dataset map tiles.</p>
+
+                    <p><code>
                         GET /collections
-                    </code><br>A list of collections of all maps available from this API.</p>
+                    </code><br>Retrieves the list of collections of all maps available from this API.</p>
 
                     <p><code>
                         GET /collections/{collectionId}
@@ -132,37 +152,15 @@
                     </code><br>Retrieves the maps description for this collection including the <code>links</code> to get a
                         <code>map</code>, and the <code>infoTemplate</code>.</p>
 
-                    <p><code>
-                        GET /map
-                    </code><br>Retrieves the maps description for this collection including the <code>links</code> to get a
-                        <code>map</code>, and the <code>infoTemplate</code>.</p>
 
                     <p><code>
-                        GET /collections/{collectionId}/map/{styleId}
-                    </code><br>Retrieves a map in the requested crs, on the requested bbox designed to be shown in a rendering
-                        device of a width and a height. Some formats require to apply a style on the server side (e.g.
-                        png, jpeg, gif) and some others might include a reference to a style to be applied in the client
-                        side.</p>
+                        GET {datasetRoot}/collections/{collectionId}/styles/{styleId}/map
+                    </code><br>Retrieves a map from a collection, with a specific style applied.</p>
+
 
                     <p><code>
-                        GET /collections/{collectionId}/map/{styleId}/info
-                    </code><br>Retrieves a information about a feature presented on the map in the requested crs, on the
-                        requested bbox designed to be shown in a rendering device of a width and a height. Some formats
-                        require to apply a style on the server side (e.g. png, jpeg, gif) and some others might include
-                        a reference to a style to be applied in the client side.</p>
-
-                    <p><code>
-                        GET /map/{styleId}
-                    </code><br>Retrieves a map in the requested crs, on the requested bbox designed to be shown in a device of a
-                        width and a height. Some formats require to apply a style on the server side (e.g. png, jpeg,
-                        gif) and some others might include a reference to a style to be applied in the client side.</p>
-
-                    <p><code>
-                        GET /map/{styleId}/info
-                    </code><br>Retrieves a information about a feature presented on the map for collections in the requested
-                        crs, on the requested bbox desigend to be shown in a rendering device of a width and a height.
-                        Some formats require to apply a style on the server side (e.g. png, jpeg, gif) and some others
-                        might include a reference to a style to be applied in the client side.</p>
+                        GET {datasetRoot}/collections/{collectionId}/map/tiles/{tileMatrixSetId}/…​
+                    </code><br>Retrieves a map tile from a collection and a specific tile matrix set, and with a specific style applied.</p>
 
 
                 </div>
@@ -248,7 +246,7 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCQMLFG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -257,7 +255,7 @@
   })(window,document,'script','dataLayer','GTM-NCQMLFG');</script>
   <!-- End Google Tag Manager -->
   <link type="text/css" rel="stylesheet" href="../css/cookiepanel.css" />
-  
+
   <div id='cookiePanel'>
     <p>Do you consent to the use of cookies on this site?</p>
     <button id="btnConsentGranted" class="btnConsent">Yes</button>
