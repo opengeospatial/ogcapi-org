@@ -118,50 +118,74 @@
 
                     <p>OGC API - Maps is a draft API standard that provides maps representing geospatial data.</p>
 
-                    <p><code>
-                        GET {datasetRoot}/
-                    </code><br>Accesses the Landing page.</p>
+                    <p>
+                    <strong>Get a map</strong><br>
+                      <code>
+                        GET .../map
+                    </code><br> Requests the default representation of the map. Additional parameters can be specified to offer more control on the map being returned.</p>
 
-                    <p><code>
-                        GET {datasetRoot}/conformance
-                    </code><br>Retrieves the Conformance declaration.</p>
+                    <p>
+                      <strong>Specify dimensions</strong><br>
+                      <code>
+                        GET .../map?width=600&height=400
+                    </code><br>Width and height allow you to define the resolution of the returned map.
+                    </p>
 
-                    <p><code>
-                        GET {datasetRoot}/map
-                    </code><br>Dataset maps in the default style.</p>
+                    <p>
+                      <strong>Spatial subsetting</strong><br>
+                      <code>
+                        GET .../map?bbox-crs=[OGC:CRS84]&bbox=160.6,-55.95,-170,-25.89
+                    </code><br>Geospatial datasets can cover large areas. The Bounding Box (bbox) option allows you to specify a portion of the data for which you wish to retrieve a map. <code>bbox</code> is defined using the <code>bbox-crs</code> specified in the request (defaulting to CRS84 if not specified).
+                    <br><br>
+                    <code>
+                      GET .../map?subset-crs=[OGC:CRS84]&subset=Lat(-55.95:-25.89),Lon(160.6:-170)
+                    </code><br>As an alternative to <code>bbox</code>, the <code>subset</code> query parameter can be used, with a syntax explicitly stating the axis for each bounding coordinate pairs.
+                    </p>
 
-                    <p><code>
-                        GET {datasetRoot}/styles/{styleId}/map
-                    </code><br>Retrieves the Dataset maps.</p>
+                    <p>
+                      <strong>Temporal subsetting</strong><br>
+                      <code>
+                        GET .../map?datetime=2020-08-20T14:12:05Z
+                    </code><br>Maps can be obtained for specific date and time.
+                    <br>
+                    <code>
+                      GET .../map?subset=datetime("2020-08-20T14:12:05Z")
+                   </code><br>Date and time can also be specified using the subset query parameter.
+                  </p>
 
-                    <p><code>
-                        GET {datasetRoot}/map/tiles/{tileMatrixSetId}/…​
-                    </code><br>Retrieves the Dataset map tiles.</p>
+                    <p>
+                      <strong>Styled maps</strong><br>
+                      <code>
+                        GET .../styles/{styleId}/map
+                    </code><br>(In combination with OGC API - Styles) Requests the map to be returned in a specific style. This allows you to define the appearance of the map to suit your needs.
+                    </p>
 
-                    <p><code>
-                        GET /collections
-                    </code><br>Retrieves the list of collections of all maps available from this API.</p>
+                    <p>
+                      <strong>Alternate map CRS</strong><br>
+                      <code>
+                        GET .../map?crs=[EPSG:3395]
+                    </code><br>Maps use <a href="https://en.wikipedia.org/wiki/Spatial_reference_system">Coordinate Reference Systems (CRS)</a> to define their position within a space (e.g., the Earth's surface). OGC API - Maps allows maps to be requested in any CRS supported by the server, and defaults to the native/storage CRS (not necessarily CRS84). This example will return the map according to a <a href="https://en.wikipedia.org/wiki/Mercator_projection">World Mercator Projection</a> CRS.
+                    </p>
 
-                    <p><code>
-                        GET /collections/{collectionId}
-                    </code><br>Description of a collection <code>{collectionId}</code> available from this API. It defines what
-                        is possible to do with it to generate a map.</p>
-
-                    <p><code>
-                        GET /collections/{collectionId}/map
-                    </code><br>Retrieves the maps description for this collection including the <code>links</code> to get a
-                        <code>map</code>, and the <code>infoTemplate</code>.</p>
-
-
-                    <p><code>
-                        GET {datasetRoot}/collections/{collectionId}/styles/{styleId}/map
-                    </code><br>Retrieves a map from a collection, with a specific style applied.</p>
-
-
-                    <p><code>
-                        GET {datasetRoot}/collections/{collectionId}/map/tiles/{tileMatrixSetId}/…​
-                    </code><br>Retrieves a map tile from a collection and a specific tile matrix set, and with a specific style applied.</p>
-
+                    <p>
+                      <strong>Putting it all together</strong><br>
+                      Multiple parameters can be combined together for a single request, e.g.: <br>
+                      <code>
+                        GET .../styles/{styleId}/map?<br>
+                         width=600&height=400&<br>
+                         bbox-crs=[OGC:CRS84]&bbox=160.6,-55.95,-170,-25.89&<br>
+                         datetime=2020-08-20T14:12:05Z&<br>
+                         crs=[EPSG:3395]
+                       </code>
+                      <br><br>
+                     <code>
+                      GET .../styles/{styleId}/map?<br>
+                         crs=[EPSG:3395]&<br>
+                         width=600&height=400&<br>
+                         subset-crs=[OGC:CRS84]&<br>
+                         subset=Lat(-55.95:-25.89),Lon(160.6:-170),datetime("2020-08-20T14:12:05Z")
+                    </code><br>
+                    </p>
 
                 </div>
                 <!-- End CONTENT -->
