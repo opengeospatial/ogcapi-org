@@ -103,112 +103,35 @@
 
                     <h1 id="ogc-api---discrete-global-grid-systems">OGC API - Discrete Global Grid Systems</h1>
 
-                    <p>The draft OGC API - Discrete Global Grid Systems standard specifies an API for accessing data
-                        organised according to a Discrete Global Grid System (DGGS). A DGGS is a spatial reference
-                        system that uses a hierarchical tessellation of cells to partition and address the globe. DGGS
-                        are characterized by the properties of their cell structure, geo-encoding, quantization strategy
-                        and associated mathematical functions.</p>
+                    <p>The draft OGC API - DGGS candidate standard specifies an API for accessing data organised according to a Discrete Global Grid System (DGGS). A DGGS is a spatial reference system that uses a hierarchical tessellation of zones to partition and address the globe. DGGS are characterized by the properties of their zone structure, geo-encoding, quantization strategy and associated mathematical functions.</p>
 
-                    <p>The API has been designed as a profile of two other OGC APIs:</p>
-
-                    <ul>
-                        <li>OGC API - Features</li>
-                        <li>OGC API - Processes</li>
-                    </ul>
-
-
-                    <p>NOTE: In the future, a single interface may emerge as the preferred option. This will be
-                        determined during development of the candidate standard.</p>
+                    <p>OGC API - DGGS provides access to data organised according to one or more DGGS.</p>
 
                     <h2 id="overview-of-the-ogc-api---discrete-global-grid-systems-interface-based-on-ogc-api---features">
-                        Overview of the OGC API - Discrete Global Grid Systems interface based on OGC API -
-                        Features</h2>
+                        Overview of the OGC API - Discrete Global Grid Systems interface</h2>
 
-                    <p><code>GET /</code></p>
+                    <p>The following transportable end-point resources can be attached either to an OGC API dataset (as defined by <a href="https://docs.ogc.org/is/19-072/19-072.html">OGC API - Common - Part 1: Core</a>) or to an OGC API collection (as defined by <a href="http://docs.ogc.org/DRAFTS/20-024.html">OGC API - Common - Part 2: Geospatial data</a>).</p>
+                    <p></p>
 
-                    <p>Retrieves the landing page. The purpose of the landing page is to provide clients with a starting
-                        point for using the API. Any resource exposed through an API can be accessed by following paths
-                        or links starting from the landing page.</p>
+                    <p><code>GET .../dggs</code></p>
 
-                    <p><code>GET /conformance</code></p>
+                    <p>List of DGGS Resource Instances</p>
 
-                    <p>Provides a list declaring the modules that are implemented by the API. These modules are referred
-                        to as Conformance Classes. The list of Conformance Classes is key to understanding and using an
-                        OGC Web API.</p>
+                    <p><code>GET .../dggs/{dggsRSID}</code></p>
 
-                    <p><code>GET /collections</code></p>
+                    <p>Description of the DGGS instance, providing links to the definition of the DGGS and indexing scheme it implements, as well as links to the data retrieval mechanism and zone query end-points. The DGGS definition describes the parameters and structure of the selected DGGS Reference System as specified by OGC Abstract Specification Topic 21 v2.0 - Part 1 (<a href="https://docs.ogc.org/as/20-040r3/20-040r3.html">ISO/19170-1</a>).</p>
 
-                    <p>The list of supported collections.</p>
+                    <p><code>GET .../dggs/{dggsRSID}/zones</code></p>
 
-                    <p><code>GET /collections/{collectionId}</code></p>
+                    <p>Query the list of zones where data is available and/or match certain query criteria (e.g., a bounding box, a <a href="http://docs.ogc.org/DRAFTS/21-065.html">CQL2</a> filter), for a selected DGGS_RS, optionally specifying a particular DGGS hierarchy level. This end-point supports a compact representation based on zone hierarchy, as well as paging in order to handle potentially large responses.</p>
 
-                    <p>Describes a particular Feature Collection</p>
+                    <p><code>GET .../dggs/{dggsRSID}/zones/{ZonalID}</code></p>
 
-                    <p><code>GET /collections/{collectionId}/items</code></p>
+                    <p>Information about a specific zone for a specific DGGS instance, such as its geometry and area.</p>
 
-                    <p>Access the list of Features within a Collection. Can list either all the Features, or a
-                        particular subset based on a, WGS84 bbox, a coarse DGGS CellID (equivalent to a bbox), or a DGGS
-                        quadrilateral specified by two DGGS CellIDs (equivalent to a bbox)</p>
+                    <p><code>GET .../dggs/{dggsRSID}/zones/{ZonalID}/data</code></p>
 
-                    <p><code>GET /collections/{collectionId}/items/{itemId}</code></p>
-
-                    <p>Access the definition of a particular Feature</p>
-
-                    <h2 id="overview-of-the-ogc-api---discrete-global-grid-systems-interface-based-on-ogc-api---processes">
-                        Overview of the OGC API - Discrete Global Grid Systems interface based on OGC API -
-                        Processes</h2>
-
-                    <p><code>GET /</code></p>
-
-                    <p>Retrieves the landing page. The purpose of the landing page is to provide clients with a starting
-                        point for using the API. Any resource exposed through an API can be accessed by following paths
-                        or links starting from the landing page.</p>
-
-                    <p><code>GET /conformance</code></p>
-
-                    <p>Provides a list declaring the modules that are implemented by the API. These modules are referred
-                        to as Conformance Classes. The list of Conformance Classes is key to understanding and using an
-                        OGC Web API.</p>
-
-                    <p><code>GET /collections</code></p>
-
-                    <p>The list of supported collections.</p>
-
-                    <p><code>GET /collections/{collectionId}</code></p>
-
-                    <p>Describes a particular DGGS</p>
-
-                    <p><code>GET /collections/{collectionId}/zones</code></p>
-
-                    <p>Access the list of zones in a given DGGS. Can list either all the zones, or a particular subset
-                        based on resolution, WGS84 bbox, or list of containing zones (e.g., polygon defined in DGGS
-                        terms)</p>
-
-                    <p><code>GET /collections/{collectionId}/zones</code></p>
-
-                    <p>Access the definition of a particular zone.</p>
-
-                    <p><code>GET /collections/{collectionId}/neighbors</code></p>
-
-                    <p>Get the list of neighboring zones, to a given zone.</p>
-
-                    <p><code>GET /collections/{collectionId}/parents</code></p>
-
-                    <p>Get the list of parent zones, to a given zone.</p>
-
-                    <p><code>GET /collections/{collectionId}/children</code></p>
-
-                    <p>Get the list of child zones, to a given zone.</p>
-
-                    <p><code>GET /collections/{collectionId}/point</code></p>
-
-                    <p>Returns the id of the zone containing the given point, at the given resolution.</p>
-
-                    <p><code>GET /collections/{collectionId}/polygon</code></p>
-
-                    <p>Lists zones contained in the polygon.</p>
-
-
+                    <p>Retrieve the data for a specific zone of a particular DGGS instance, at a resolution corresponding to the DGGS hierarchy level of that zone, in one or more available data packet encodings. Typically, the data packet would include values for descendent zones at a number of levels deeper than the requested zone's level, as opposed to a single value for the requested zone.</p>
                 </div>
                 <!-- End CONTENT -->
                 <!-- <p class="text-center">To find out more about the OGC please <a href="https://www.ogc.org" target="_blank">visit our public site</a>. <br><img src="img/OGC_Logo_2D_Blue_150px.jpg" alt="OGC Logo"></p> -->
