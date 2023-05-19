@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>OGC API - Common - Overview</title>
+    <title>OGC API - Connected Systems - Overview</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -72,12 +72,12 @@
 </nav>
 
 <!-- Header -->
-<!--<header class="masthead edr">-->
+<!--<header class="masthead features">-->
 <header class="masthead">
 <!--    <div class="ov-lay">-->
 <!--        <div class="container">-->
 <!--            <div class="intro-text">-->
-<!--                <div class="intro-lead-in">OGC API - EDR - Overview</div>-->
+<!--                <div class="intro-lead-in">OGC API - Connected Systems - Overview</div>-->
                 <!-- <div class="intro-heading">#OGCAPI</div> -->
                 <!-- <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#intro">Tell Me More</a> -->
 <!--                <br>-->
@@ -101,22 +101,11 @@
                 <!-- Begin CONTENT -->
                 <div id="content">
 
-                    <h1 id="ogc_api_common">OGC API - Common - Overview</h1>
+                    <h1 id="ogc_api_connected_systems">OGC API - Connected Systems</h1>
 
-                    <p><a href="https://ogcapi.ogc.org/">OGC API standards</a> define modular API building blocks to
-                        spatially enable Web APIs
-                        in a consistent way. <a href="http://openapis.org">OpenAPI</a> is used to define the reusable
-                        API building blocks with responses in JSON and HTML.</p>
+                    <p>OGC API - Connected Systems will be an extension of the OGC API - Features and, in addition to providing its own mechanism for retrieving static and dynamic data, the API will allow linking to other OGC API Standards, such as OGC API - 3D GeoVolumes, 3D Tiles, Coverages, Environmental Data Retrieval, SensorThings, Moving Features, Processes, and others.</p>
 
-                    <p>The OGC API family of standards is organized by resource type. OGC API - Common defines the
-                        resources and access mechanisms which are useful for a client seeking to understand the
-                        offerings and capabilities of an API. The standard also provides a common connection between the
-                        API landing page and resource-specific details.</p>
-
-                    <h2 id="overview_of_ogc_api_common_part_1_core">Overview of OGC API - Common - Part 1: Core</h2>
-
-                    <p>The OGC API - Common - Part 1: Core Standard defines the common offerings and capabilities of an
-                        OGC API.</p>
+                    <h2 id="overview_of_ogc_api_connected_systems">Overview of OGC API - Connected Systems</h2>
 
                     <p><code>
                         GET /
@@ -139,23 +128,50 @@
                         GET /conformance
                     </code><br>Provides a list declaring the modules that are implemented by the API. These modules are referred
                         to as Conformance Classes. The list of Conformance Classes is key to understanding and using an
-                        OGC Web API.</p>
-
-                    <h2 id="overview_of_ogc_api_common_part_2_geospatial_data">Overview of OGC API - Common - Part 2:
-                        Geospatial Data</h2>
-
-                    <p>The purpose of the <strong>draft</strong> OGC API - Common - Part 2: Geospatial Data Standard is to provide a common
-                        connection between the API landing page and resource-specific details.</p>
+                        OGC Web API.</p>                    
 
                     <p><code>
                         GET /collections
-                    </code><br>Retrieves information which describes the set of supported Collections.</p>
+                    </code></p>
+
+                    <p>List or search all collections available from this server endpoint.</p>
 
                     <p><code>
-                        GET /collections/{collectionId}
-                    </code><br>Retrieves descriptive information about a specific Collection.</p>
+                        GET /collections/{collectionId}/items
+                    </code></p>
 
+                    <p>Retrieve collections items, which can be Systems, Procedures, Deployments, Sampling Features, or any other features.</p>
 
+                    <p><code>
+                        GET /systems
+                    </code></p>
+
+                    <p>List or search all systems accessible from this server endpoint.</p>   
+                    
+                    <p><code>
+                        GET /procedures
+                    </code></p>
+
+                    <p>List or search all procedures accessible from this server endpoint.</p>  
+                    
+                    <p><code>
+                        GET /deployments
+                    </code></p>
+
+                    <p>List or search all deployments accessible from this server endpoint.</p>       
+                    
+                    <p><code>
+                        GET /samplingFeatures
+                    </code></p>
+
+                    <p>List or search all sampling features available from this server endpoint.</p>  
+                    
+                    <p><code>
+                        GET /properties
+                    </code></p>
+
+                    <p>List or search all properties available from this server endpoint.</p>  
+                    
 
                 </div>
                 <!-- End CONTENT -->
@@ -234,7 +250,6 @@
 
 <!-- Custom scripts for this template -->
 <script src="../js/agency.min.js"></script>
-
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCQMLFG"
