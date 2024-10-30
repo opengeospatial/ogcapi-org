@@ -147,28 +147,37 @@
 
                     <p><b>TemporalGeometry</b></p>
 
-                    <code>GET /collections/{collectionId}/items/{mFeatureId}/tgeometries</code>
+                    <code>GET /collections/{collectionId}/items/{mFeatureId}/tgsequence</code>
                     <p>Retrieve the movement data of the single moving feature with id <b>mFeatureId</b>.</p>
 
-                    <code>POST /collections/{collectionId}/items/{mFeatureId}/tgeometries</code>
+                    <code>POST /collections/{collectionId}/items/{mFeatureId}/tgsequence</code>
                     <p>Add movement data into the moving feature with id <b>mFeatureId</b>.</p>
 
-                    <code>DELETE /collections/{collectionId}/items/{mFeatureId}/tgeometries/{tGeometryId}</code>
+                    <code>DELETE /collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}</code>
                     <p>Delete a singe temporal geometry with id <b>tGeometryId</b>.</p>
+
+                    <code>GET /collections/{collectionId}/items/{mFeatureId}/tgsequence/{tGeometryId}/{queryType}</code>
+                    <p>Query for temporal primitive geometries.</p>
 
                     <p><b>TemporalProperty</b></p>
 
                     <code>GET /collections/{collectionId}/items/{mFeatureId}/tproperties</code>
-                    <p>Retrieve the static information of the temporal property data that included a single moving feature with id mFeatureId. The static data of a temporal property is not included temporal values (property <b>values</b>).</p>
+                    <p>Retrieve the static information of the temporal property data that included a single moving feature with id <b>mFeatureId</b>. The static data of a temporal property is not included temporal values (property values).</p>
 
                     <code>POST /collections/{collectionId}/items/{mFeatureId}/tproperties</code>
                     <p>Add temporal property data into a moving feature with id <b>mFeatureId</b>.</p>
 
-                    <code>GET /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}</code>
-                    <p>Retrieve a temporal values with a specified name <b>tPropertyName</b> of temporal property.</p>
+                    <code>GET /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyId}</code>
+                    <p>Retrieve temporal values from a temporal property with a specified identifier <b>tPropertyId</b>.</p>
 
-                    <code>POST /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyName}</code>
-                    <p>Add more temporal values data into a temporal property with id <b>tPropertyName</b>.</p>
+                    <code>POST /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyId}</code>
+                    <p>Add more temporal values data into a temporal property with id <b>tPropertyId</b>.</p>
+
+                    <code>DELETE /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyId}</code>
+                    <p>Delete temporal property with id <b>tPropertyId</b>.</p>  
+                    
+                    <code>DELETE /collections/{collectionId}/items/{mFeatureId}/tproperties/{tPropertyId}/{tValueId}</code>
+                    <p>Delete temporal values data from a temporal property with id <b>tPropertyId</b>.</p>                     
 
 
                 </div>
