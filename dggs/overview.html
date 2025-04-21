@@ -120,19 +120,19 @@
 
                     <p><code>GET .../dggs/{dggrsID}</code></p>
 
-                    <p><a href="https://docs.ogc.org/DRAFTS/21-038.html#_discrete_global_grid_reference_system_information_dggsdggrsid">Description</a> of the DGGRS, providing links to the <a href="https://github.com/opengeospatial/ogcapi-discrete-global-grid-systems/blob/master/core/schemas/dggrs-definition/dggrs-definition-proposed.json">definition</a> of the DGGRS it implements, which consists of a specific hierarchy of Discrete Global Grids, a Zone Identifier Reference System (ZIRS) and a deterministic ordering of sub-zones. The description also includes links to the data retrieval mechanism and zone query end-points. The DGGRS definition describes the parameters and structure of its DGGH and ZIRS as specified by (<a href="https://docs.ogc.org/as/20-040r3/20-040r3.html">ISO/19170-1</a>), as well as a deterministic sub-zone order.</p>
+                    <p><a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_discrete_global_grid_reference_system_information_dggsdggrsid">Description</a> of the DGGRS, providing links to the <a href="https://github.com/opengeospatial/ogcapi-discrete-global-grid-systems/blob/master/core/schemas/dggrs-definition/dggrs-definition-proposed.json">definition</a> of the DGGRS it implements, which consists of a specific hierarchy of Discrete Global Grids, a Zone Identifier Reference System (ZIRS) and a deterministic ordering of sub-zones. The description also includes links to the data retrieval mechanism and zone query end-points. The DGGRS definition describes the parameters and structure of its DGGH and ZIRS as specified by (<a href="https://docs.ogc.org/as/20-040r3/20-040r3.html">ISO/19170-1</a>), as well as a deterministic sub-zone order.</p>
 
                     <p><code>GET .../dggs/{dggrsID}/zones</code></p>
 
-                    <p><a href="https://docs.ogc.org/DRAFTS/21-038.html#_requirement_class_zone_query"  rel="nofollow">Query the list of zones</a> where data is available and/or match certain query criteria (e.g., <a href="https://docs.ogc.org/DRAFTS/21-038.html#_parameter_bbox" rel="nofollow">a bounding box</a>, a <a href="https://docs.ogc.org/is/21-065r2/21-065r2.html" rel="nofollow">CQL2</a> <a href="https://docs.ogc.org/DRAFTS/21-038.html#_requirement_class_filtering_zone_queries_with_cql2" rel="nofollow"><code>filter</code></a>), for a selected DGGRS, optionally specifying a <a href="https://docs.ogc.org/DRAFTS/21-038.html#_parameter_zone_level" rel="nofollow">particular DGGS hierarchy level</a> (<code>zone-level</code>). This end-point supports a <a href="https://docs.ogc.org/DRAFTS/21-038.html#_parameter_compact_zones" rel="nofollow">compact representation</a> based on zone hierarchy (<code>compact-zones=true</code>, the default), as well a <a href="https://docs.ogc.org/DRAFTS/21-038.html#_parameter_parent_zone_for_hierarchical_exploration" rel="nofollow"><code>parent-zone</code> parameter</a> allowing to progressively explore the hierarchy to avoid potentially large responses. In addition to a simple <a href="https://docs.ogc.org/DRAFTS/21-038.html#rc_zone-json" rel="nofollow">JSON response</a>, implementations can also support others such as a <a href="https://docs.ogc.org/DRAFTS/21-038.html#rc_zone-binary64bit" rel="nofollow">64-bit integer binary response</a>.</p>
+                    <p><a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_requirement_class_zone_query"  rel="nofollow">Query the list of zones</a> where data is available and/or match certain query criteria (e.g., <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_parameter_bbox" rel="nofollow">a bounding box</a>, a <a href="https://docs.ogc.org/is/21-065r2/21-065r2.html" rel="nofollow">CQL2</a> <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_requirement_class_filtering_zone_queries_with_cql2" rel="nofollow"><code>filter</code></a>), for a selected DGGRS, optionally specifying a <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_parameter_zone_level" rel="nofollow">particular DGGS hierarchy level</a> (<code>zone-level</code>). This end-point supports a <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_parameter_compact_zones" rel="nofollow">compact representation</a> based on zone hierarchy (<code>compact-zones=true</code>, the default), as well a <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_parameter_parent_zone_for_hierarchical_exploration" rel="nofollow"><code>parent-zone</code> parameter</a> allowing to progressively explore the hierarchy to avoid potentially large responses. In addition to a simple <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#rc_zone-json" rel="nofollow">JSON response</a>, implementations can also support others such as a <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#rc_zone-binary64bit" rel="nofollow">64-bit integer binary response</a>.</p>
 
                     <p><code>GET .../dggs/{dggrsId}/zones/{zoneId}</code></p>
 
-                    <p><a href="https://docs.ogc.org/DRAFTS/21-038.html#_retrieving_zone_information_dggsdggrsidzoneszoneid">Information</a> about a specific zone for a specific DGGRS, such as its geometry and area.</p>
+                    <p><a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_retrieving_zone_information_dggsdggrsidzoneszoneid">Information</a> about a specific zone for a specific DGGRS, such as its geometry and area.</p>
 
                     <p><code>GET .../dggs/{dggrsId}/zones/{zoneId}/data</code></p>
 
-                    <p><a href="https://docs.ogc.org/DRAFTS/21-038.html#_requirement_class_data_retrieval" rel="nofollow">Retrieve the data</a> for a specific zone of a particular DGGRS, at a resolution corresponding to the DGGS hierarchy level of that zone, in one or more available data packet encodings. Typically, the data packet would include values for descendent zones at a number of levels deeper than the <a href="https://docs.ogc.org/DRAFTS/21-038.html#_requirement_class_data_custom_depths" rel="nofollow">requested zone's level</a> (<code>zone-depth</code> parameter), as opposed to a single value for the requested zone. See the <a href="https://docs.ogc.org/DRAFTS/21-038.html#rc_data-json" rel="nofollow">DGGS-JSON</a> schema in particular as well as the associated <a href="https://docs.ogc.org/DRAFTS/21-038.html#rc_data-ubjson" rel="nofollow">UB-JSON encoding requirement class</a>.</p>
+                    <p><a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_requirement_class_data_retrieval" rel="nofollow">Retrieve the data</a> for a specific zone of a particular DGGRS, at a resolution corresponding to the DGGS hierarchy level of that zone, in one or more available data packet encodings. Typically, the data packet would include values for descendent zones at a number of levels deeper than the <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#_requirement_class_data_custom_depths" rel="nofollow">requested zone's level</a> (<code>zone-depth</code> parameter), as opposed to a single value for the requested zone. See the <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#rc_data-json" rel="nofollow">DGGS-JSON</a> schema in particular as well as the associated <a href="https://docs.ogc.org/DRAFTS/21-038r1.html#rc_data-ubjson" rel="nofollow">UB-JSON encoding requirement class</a>.</p>
                 </div>
                 <!-- End CONTENT -->
                 <!-- <p class="text-center">To find out more about the OGC please <a href="https://www.ogc.org" target="_blank">visit our public site</a>. <br><img src="img/OGC_Logo_2D_Blue_150px.jpg" alt="OGC Logo"></p> -->
@@ -216,7 +216,7 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCQMLFG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -225,7 +225,7 @@
   })(window,document,'script','dataLayer','GTM-NCQMLFG');</script>
   <!-- End Google Tag Manager -->
   <link type="text/css" rel="stylesheet" href="../css/cookiepanel.css" />
-  
+
   <div id='cookiePanel'>
     <p>Do you consent to the use of cookies on this site?</p>
     <button id="btnConsentGranted" class="btnConsent">Yes</button>
