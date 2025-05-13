@@ -103,13 +103,13 @@
 
                     <h1 id="ogc_api_records">OGC API - Records</h1>
 
-                    <p><a href="https://ogcapi.ogc.org/">OGC API standards</a> define modular API building blocks to
+                    <p><a href="https://ogcapi.ogc.org/">OGC API Standards</a> define modular API building blocks to
                         spatially enable Web APIs
-                        in a consistent way. <a href="http://openapis.org">OpenAPI</a> is used to define the reusable
-                        API building blocks with responses in JSON and HTML.</p>
+                        in a consistent way. The Standards use the <a href="http://openapis.org">OpenAPI</a> Specification to define reusable
+                        API building blocks that support responses in JSON and HTML.</p>
 
-                    <p>The OGC API family of standards is organized by resource type. The draft OGC API - Records
-                        standard defines an API with two goals:</p>
+                    <p>The OGC API family of Standards is organized by resource type. The OGC API - Records
+                        Standard defines an API with two goals:</p>
 
                     <ul>
                         <li><p>Provide modern API patterns and encodings to facilitate further lowering the barrier to
@@ -118,10 +118,14 @@
                             OGC Catalogue Service (CSW) standard.</p></li>
                     </ul>
 
+                    <p>The content of a Record makes a resource discoverable by providing summary information (metadata) about the resource. In this context, resources are things that would be useful to a user or developer, such as features, coverages, tiles / maps, styles, assets, etc.<br/>
+                            
+                    </p>             
+
                     <h2 id="overview_of_ogc_api_records_part_1_core">Overview of OGC API - Records - Part 1: Core</h2>
 
                     <p><code>
-                        GET {root}/
+                        GET /
                     </code><br>Retrieves the landing page. The purpose of the landing page is to provide clients with a starting
                         point for using the API. Any resource exposed through an API can be accessed by following paths
                         or links starting from the landing page.<br>The landing page includes three metadata elements; title, description, and attribution. Only the
@@ -130,33 +134,33 @@
                         landing page.</p>
 
                     <p><code>
-                        GET {root}/api
+                        GET /api
                     </code><br>Retrieves the API definition which describes the capabilities provided by that API. This resource
                         can be used by developers to improve their understanding of the API, by software clients to
                         connect to the server, and by development tools to support the implementation of servers and
                         clients.</p>
 
                     <p><code>
-                        GET {root}/conformance
+                        GET /conformance
                     </code><br>Provides a list declaring the modules that are implemented by the API. These modules are referred
                         to as Conformance Classes. The list of Conformance Classes is key to understanding and using an
                         OGC Web API.</p>
 
                     <p><code>
-                        GET {root}/collections
-                    </code><br>Metadata describing the spatial collections available from this API.</p>
+                        GET /collections
+                    </code><br>Metadata describing the catalogs available from this API implementation instance.</p>
 
                     <p><code>
-                        GET /collections/{collectionId}
-                    </code><br>Metadata describing the collection which has the unique identifier {collectionid}</p>
+                        GET /collections/{catalogId}
+                    </code><br>Metadata describing a catalog which has the unique identifier {catalogId}</p>
 
                     <p><code>
-                        GET {root}/collections/{collectionid}/items
+                        GET /collections/{catalogId}/items
                     </code><br>Search results based on querying the service for records satisfying 0..n query parameters.</p>
 
                     <p><code>
-                        GET {root}/collections/{collectionid}/items/{recordid}
-                    </code><br>Record of metadata which has the unique identifier {recordid}.</p>
+                        GET /collections/{catalogId}/items/{recordId}
+                    </code><br>Record of metadata which has the unique identifier {recordId}.</p>
 
 
                 </div>
