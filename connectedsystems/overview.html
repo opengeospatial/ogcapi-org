@@ -103,7 +103,7 @@
 
                     <h1 id="ogc_api_connected_systems">OGC API - Connected Systems</h1>
 
-                    <p>OGC API - Connected Systems will be an extension of the OGC API - Features and, in addition to providing its own mechanism for retrieving static and dynamic data, the API will allow linking to other OGC API Standards, such as OGC API - 3D GeoVolumes, 3D Tiles, Coverages, Environmental Data Retrieval, SensorThings, Moving Features, Processes, and others.</p>
+                    <p>OGC API - Connected Systems is designed to act as a bridge between static data (geographic and other domain features) and dynamic data (observations of these feature properties, and commands/actuations that change these feature properties).</p>
 
                     <h2 id="overview_of_ogc_api_connected_systems">Overview of OGC API - Connected Systems</h2>
 
@@ -172,6 +172,41 @@
 
                     <p>List or search all properties available from this server endpoint.</p>  
                     
+                    <p><code>
+                        GET /datastreams
+                    </code></p>
+
+                    <p>List or search all datastreams available from this server endpoint.</p> 
+                    
+                    <p><code>
+                        GET /observations
+                    </code></p>
+
+                    <p>List or search all observations available from this server endpoint..</p> 
+                    
+                    <p><code>
+                        GET /controlstreams
+                    </code></p>
+
+                    <p>List or search all control streams available from this server endpoint.</p> 
+                    
+                    <p><code>
+                        GET /commands
+                    </code></p>
+
+                    <p>List or search all commands available from this server endpoint.</p>   
+                    
+                    <p><code>
+                        GET /systemEvents
+                    </code></p>
+
+                    <p>List or search events about any system.</p> 
+                    
+                    <p><code>
+                        GET /systems/{systemId}/history
+                    </code></p>
+
+                    <p>List or search historized descriptions of the parent system.</p>                     
 
                 </div>
                 <!-- End CONTENT -->
