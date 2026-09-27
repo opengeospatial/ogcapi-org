@@ -140,101 +140,88 @@
 
 
                     <h3 id="resources">Resources</h3>
-                  
-                    <h4>Defined in OGC API - Common - Part 1</h4>
+
+                    <h4>Defined in OGC API - Common - Part 1: Core</h4>
 
                     <p><code>{root}</code> The root of the API for the dataset.</p>
-                    
+
                     <p><code>{root}/api</code> The API definition and documentation.</p>
-                    
+
                     <p><code>{root}/conformance</code> The conformance declaration. </p>
-                    
-                    <h4>Extended from OGC API - Common - Part 2 with additional properties</h4>
+
+                    <h4>Defined in OGC API - Common - Part 2: Geospatial Data</h4>
 
                     <p><code>{root}/collections</code></p>
-                    
-                    <p>The list of all collections available, some or all of which may be accessible using this Coverages API. Each of these collections contains a minimal subset of the object collection resource object described immediately below.</p>
-                    
+
+                    <p>The list of all collections available, some or all of which may be accessible using this Coverages API. Each of these collections contains a minimal subset of the collection resource object described immediately below.</p>
+
                     <p><code>{root}/collections/{collectionId}</code></p>
-                    
+
                     <p>Description for the collection with the unique identifier {collectionId}, which may be accessible as a coverage. The resource includes elements such as an id, title, description, available crs and extent. This extent describes the domain of the coverage for each dimension, including the overall envelope, detailed sub-intervals where data is available, and/or a regular or irregular grid. This object also includes links to resources pertaining to this collection. </p>
-                    
-                    <h4>Defined in Coverages - Part 1</h4>
+
+                    <h4>Defined in OGC API - Common - Part 3: Schemas</h4>
 
                     <p><code>{root}/collections/{collectionId}/schema</code></p>
-                    
-                    <p>Returns the schema for the coverage fields or properties of values available at each direct position. At minimum, a JSON Schema representation of this resource is available. </p>
-                    
+
+                    <p>Returns the schema for the coverage fields or properties of values available at each direct position (called the range type in CIS). At minimum, a JSON Schema representation of this resource is available. </p>
+
+                    <h4>Defined in Coverages - Part 1</h4>
+
                     <p><code>{root}/collections/{collectionId}/coverage</code></p>
-                    
+
                     <p>Returns the coverage data, including any self-describing information (such as the domain set, range type and metadata components in addition to the range set). </p>
-                    
+
                     <h4>Defined in Tiles - Part 1 (Coverage Tiles)</h4>
 
                     <p><code>{root}/collections/{collectionId}/coverage/tiles</code></p>
-                    
-                    <p>Returns the list of tilesets available for this coverage.</p>
-                    
-                    <p><code>{root}/collections/{collectionId}/coverage/tiles/{tileSetId}</code></p>
-                    
-                    <p>Returns an individual coverage tileset for a particular 2D Tile Matrix Set</p>
-                    
-                    <p><code>{root}/collections/{collectionId}/coverage/tiles/{tileSetId}/{tileMatrix}/{tileRow}/{tileCol}</code></p>
-                    
-                    <p>Returns an individual coverage tile for a particular 2D Tile Matrix Set, tile matrix, tile row and tile column</p>
-                    
-                    <h4>Defined in Coverages - Part 1 "Scenes" requirements class</h4>
 
-                    <p><code>{root}/collections/{collectionId}/scenes</code></p>
-                    
-                    <p>Returns the list of scenes available for this coverage (for multi-scenes coverages, when the Scenes requirement class is supported)</p>
-                    
-                    <p><code>{root}/collections/{collectionId}/scenes/{sceneId}</code></p>
-                    
-                    <p>Returns the scene metadata for an individual scene</p>
-                    
-                    <p><code>{root}/collections/{collectionId}/scenes/{sceneId}/coverage</code></p>
-                    
-                    <p>Returns the coverage data for an individual scene</p>
-                    
+                    <p>Returns the list of tilesets available for this coverage.</p>
+
+                    <p><code>{root}/collections/{collectionId}/coverage/tiles/{tileSetId}</code></p>
+
+                    <p>Returns an individual coverage tileset for a particular 2D Tile Matrix Set</p>
+
+                    <p><code>{root}/collections/{collectionId}/coverage/tiles/{tileSetId}/{tileMatrix}/{tileRow}/{tileCol}</code></p>
+
+                    <p>Returns an individual coverage tile for a particular 2D Tile Matrix Set, tile matrix, tile row and tile column</p>
+
                     <h4>Examples</h4>
 
                     <p><code>GET /collections/myCoverage/coverage</code>
-                    
-                    <p>Retrieve the whole coverage (the response may be downsampled if Scaling is supported by the server).
-                    
-                    <p><code>GET /collections/myCoverage/coverage?scale-factor=1</code>
-                    
-                    <p>Retrieve the whole coverage at native resolution (the server will likely return a 400 error for large datasets).
-                    
-                    <p><code>GET /collections/myCoverage/coverage?bbox=10,40,20,50</code>
-                    
-                    <p>Retrieve coverage spatial subsets between 40 and 50 degrees North, 10 and 20 degrees East, using the bbox query parameter.
-                    
-                    <p><code>GET /collections/myCoverage/coverage?bbox=160.6,-55.95,-170,-25.89</code>
-                    
-                    <p>Retrieve coverage spatial subsets using the bbox query parameter, crossing the antimeridian.
-                    
-                    <p><code>GET /collections/myCoverage/coverage?subset=Lat(40:50),Lon(10:20)</code>
-                    
-                    <p>Retrieve a coverage spatial subset using the subset query parameter.
-                    
-                    <p><code>GET /collections/myCoverage/coverage?properties=B02,B03,B04</code>
-                    
-                    <p>Retrieve bands B02, B03 and B04 (field selection a.k.a. "range subsetting").
-                    
-                    <p><code>GET /collections/myCoverage/coverage?scale-size=Lon(800),Lat(400)</code>
-                    
-                    <p>Retrieve a the coverage at a a resolution of 800 cells for the longitude axis and 400 cells for the latitude axis.
-                    
-                    <p><code>GET /collections/myCoverage/coverage?scale-factor=2</code>
-                    
-                    <p>Retrieve a the coverage at a downsampled (2x) resolution.
-                    
-                    <p><code>GET /collections/myCoverage/coverage?scale-axes=Lon(2)</code>
-                    
-                    <p>Retrieve a the coverage at a downsampled (2x) resolution for the longitude axis.
 
+                    <p>Retrieve the whole coverage<br><br>
+
+                    NOTE: The response may be downsampled if Scaling is supported by the server.
+                    Use <code>Prefer: handling=strict</code> to enforce native resolution,
+                    but the server will then likely return a 413 error for large datasets if not using downsampling, subsetting query parameters or an HTTP range request header.
+
+                    <p><code>GET /collections/myCoverage/coverage?bbox=10,40,20,50</code>
+
+                    <p>Retrieve coverage spatial subsets between 40 and 50 degrees North, 10 and 20 degrees East, using the bbox query parameter.
+
+                    <p><code>GET /collections/myCoverage/coverage?bbox=160.6,-55.95,-170,-25.89</code>
+
+                    <p>Retrieve coverage spatial subsets using the bbox query parameter, crossing the antimeridian.
+
+                    <p><code>GET /collections/myCoverage/coverage?subset=Lat(40:50),Lon(10:20)</code>
+
+                    <p>Retrieve a coverage spatial subset using the subset query parameter.
+
+                    <p><code>GET /collections/myCoverage/coverage?properties=B02,B03,B04</code>
+
+                    <p>Retrieve bands B02, B03 and B04 (field selection a.k.a. "range subsetting").
+
+                    <p><code>GET /collections/myCoverage/coverage?width=800&height=400</code>
+
+                    <p>Retrieve a the coverage at a resolution of 800 cells for the longitude or Easting axis and 400 cells for the latitude or northing axis.
+
+                    <p><code>GET /collections/myCoverage/coverage?resolution=Lon(0.25),Lat(0.25)</code>
+
+                    <p>Retrieve a the coverage at a resolution of 0.25 degrees / cell for the latitude and longitude axes.
+
+                    <p><code>GET /collections/myCoverage/coverage?crs=[EPSG:3395]&resolution=E(500),N(500)</code>
+
+                    <p>Retrieve a the coverage in a Mercator CRS, at a resolution of 500 meters / cell for the easting and northing axes.
 
                 </div>
                 <!-- End CONTENT -->
@@ -319,7 +306,7 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCQMLFG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
-  
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -328,7 +315,7 @@
   })(window,document,'script','dataLayer','GTM-NCQMLFG');</script>
   <!-- End Google Tag Manager -->
   <link type="text/css" rel="stylesheet" href="../css/cookiepanel.css" />
-  
+
   <div id='cookiePanel'>
     <p>Do you consent to the use of cookies on this site?</p>
     <button id="btnConsentGranted" class="btnConsent">Yes</button>
